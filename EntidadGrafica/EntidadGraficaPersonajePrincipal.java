@@ -4,13 +4,13 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class EntidadGraficaPersonajePrincipal extends EntidadGrafica{
+	private String[] imagenes;
 	
-	public EntidadGraficaPersonajePrincipal(JLabel label, ImageIcon actual, String[] string, float altura, float ancho) {
-		super(label,actual,string,altura,ancho);
-	}
-		
-	public ImageIcon getImagendDefault() {
-		return new ImageIcon(this.getClass().getResource(this.imagenes[0]));
+	public EntidadGraficaPersonajePrincipal(){
+		this.imagenes = new String[]{"/Grafica/Personaje Principal/PersonajePrincipalDefault.gif","/Grafica/Personaje Principal/PersonajePrincipalMoverIzquierda.gif","/Grafica/Personaje Principal/PersonajePrincipalMoverDerecha.gif","/Grafica/Personaje Principal/PersonajePrincipalMuerte.gif"};
+		this.label = new JLabel();
+		this.altura = 1;
+		this.ancho = 1;
 	}
 	
 	public ImageIcon getImagenMovientoIzquierda() {

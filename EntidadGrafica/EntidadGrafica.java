@@ -6,17 +6,8 @@ import javax.swing.JLabel;
 
 public abstract class EntidadGrafica {
 	protected JLabel label;
-	protected ImageIcon actual;
 	protected String[] imagenes;
 	protected float altura,ancho;
-	
-	public EntidadGrafica(JLabel label, ImageIcon actual, String[] iamegenes, float altura, float ancho) {
-		this.label = label;
-		this.actual = actual;
-		this.imagenes = imagenes;
-		this.altura = altura;
-		this.ancho = ancho;
-	}
 	
 	public float getAltura() {
 		return this.altura;
@@ -35,6 +26,6 @@ public abstract class EntidadGrafica {
 	}
 	
 	public ImageIcon getImagenDefault() {
-		return this.actual;
+		return new ImageIcon(this.getClass().getResource(this.imagenes[0]));
 	}
 }

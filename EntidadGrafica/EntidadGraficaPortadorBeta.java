@@ -5,11 +5,14 @@ import javax.swing.JLabel;
 
 public class EntidadGraficaPortadorBeta extends EntidadGrafica{
 
-	public EntidadGraficaPortadorBeta(JLabel label, ImageIcon actual, String[] string, float altura, float ancho) {
-		super(label,actual,string,altura,ancho);
+	public EntidadGraficaPortadorBeta(){
+		this.imagenes = new String[]{"/Grafica/Enemigo/EnemigoBetaDefault.gif","/Grafica/Enemigo/EnemigoBetaMuerte.gif"};
+		this.label = new JLabel();
+		this.altura = 1;
+		this.ancho = 1;
 	}
 	
 	public ImageIcon getImagenMuerte() {
-		return new ImageIcon(this.getClass().getResource(this.imagenes[0]));
+		return new ImageIcon(this.getClass().getResource(this.imagenes[1]));
 	}
 }
