@@ -10,12 +10,33 @@ public abstract class  Entidad {
 	protected Inteligencia inteligencia;
 	protected int posicionX,posicionY;
 	
-	public abstract Visitor getVisitor();
-	public abstract EntidadGrafica getEntidadGrafica();
-	public abstract Inteligencia getInteligencia();
-	public abstract int getPosicionX();
-	public abstract int getPosicionY();
-	public abstract void setPosicionX(int x);
-	public abstract void setPosicionY(int y);
-	public abstract void aceptarVisitor(Entidad e);
+	public Visitor getVisitor() {
+		return this.visitor;
+	}
+	
+	public EntidadGrafica getEntidadGrafica() {
+		return this.entidadGrafica;
+	}
+	
+	public  Inteligencia getInteligencia() {
+		return this.inteligencia;
+	}
+	
+	public int getPosicionX() {
+		return this.posicionX;
+	}
+	
+	public int getPosicionY() {
+		return this.posicionY;
+	}
+	
+	public void setPosicionX(int x) {
+		this.posicionX = x;
+	}
+	
+	public  void setPosicionY(int y) {
+		this.posicionY = y;
+	}
+	
+	public abstract void aceptarVisitor(Visitor v);
 }

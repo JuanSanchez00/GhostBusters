@@ -22,7 +22,7 @@ public class VisitorDetenerTiempo extends Visitor {
 	}
 
 
-	public void visitPortadorBeta(PortadorBeta pb) {
+	public void visitarPortadorBeta(PortadorBeta pb) {
 		// TODO Auto-generated method stub
 		
 	}

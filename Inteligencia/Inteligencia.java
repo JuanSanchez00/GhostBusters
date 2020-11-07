@@ -3,5 +3,7 @@ package Inteligencia;
 public abstract class Inteligencia {
 	protected float velocidad;
 	
-	public abstract 
+	public float getVelocidad() {
+		return velocidad;
+	}
 }

@@ -5,8 +5,12 @@ import Fabrica.*;
 
 public class Juego {
 	private List<EntidadPersonaje> listaEntidades;
-	private List<FabricaEnemigo> listaFrabricas;
 	private Nivel nivelActual;
+	
+	public Juego() {
+		nivelActual = new Nivel1();
+		listaEntidades = nivelActual.getListaEntidades();
+	}
 	
 	public void verificarColisiones() {
 		

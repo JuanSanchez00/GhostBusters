@@ -17,7 +17,7 @@ public class VisitorSuperArma extends Visitor {
 	}
 
 	@Override
-	public void visitPortadorBeta(PortadorBeta pb) {
+	public void visitarPortadorBeta(PortadorBeta pb) {
 		// TODO Auto-generated method stub
 		
 	}

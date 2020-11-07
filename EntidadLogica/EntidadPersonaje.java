@@ -4,10 +4,24 @@ public abstract class EntidadPersonaje extends Entidad {
 	protected float cargaViral;
 	protected EntidadProyectil proyectil;
 	
-	public abstract float getCargaViral();
-	public abstract void setCargaViral(float cv);
-	public abstract EntidadProyectil getProyectil();
-	public abstract void disparar();
-	public abstract boolean estaVivo();
-	public abstract void morir();
+	public float getCargaViral() {
+		return this.cargaViral;
+	}
+	
+	public void setCargaViral(float cv) {
+		this.cargaViral = cv;
+	}
+	
+	public EntidadProyectil getProyectil() {
+		return this.proyectil;
+	}
+
+	public boolean estaVivo() {
+		return cargaViral != 0;
+	}
+	
+	/*public void disparar();
+	public void morir();*/
+	
+	
 }

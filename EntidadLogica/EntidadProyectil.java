@@ -1,7 +1,9 @@
 package EntidadLogica;
 
 public abstract class EntidadProyectil extends Entidad {
-	private float daño;
+	private float danio;
 	
-	public abstract void getDaño();
+	public float getDanio() {
+		return danio;
+	}
 }

@@ -3,13 +3,40 @@ package Visitor;
 import EntidadLogica.*;
 
 public abstract class Visitor {
-	public abstract void visitarPersonajePrincipal(PersonajePrincipal pp);
-	public abstract void visitarPortadorAlpha(PortadorAlpha pa);
-	public abstract void visitPortadorBeta(PortadorBeta pb);
-	public abstract void visitarPocion(Pocion p);
-	public abstract void visitarMejorarArma(MejorarArma ma);
-	public abstract void visitarDetenerTiempo(DetenerTiempo dt);
-	public abstract void visitarArmaBasica(ArmaBasica ab);
-	public abstract void visitarSuperArma(SuperArma ab);
-	public abstract void visitarParticula(Particula p);
+	
+	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
+		
+	}
+	
+	public void visitarPortadorAlpha(PortadorAlpha pa) {
+		
+	}
+	
+	public void visitarPortadorBeta(PortadorBeta pb) {
+		
+	}
+	
+	public void visitarPocion(Pocion p) {
+		
+	}
+	
+	public void visitarMejorarArma(MejorarArma ma) {
+		
+	}
+	
+	public void visitarDetenerTiempo(DetenerTiempo dt) {
+		
+	}
+	
+	public void visitarArmaBasica(ArmaBasica ab) {
+		
+	}
+	
+	public void visitarSuperArma(SuperArma ab) {
+		
+	}
+	
+	public void visitarParticula(Particula p) {
+		
+	}
 }
