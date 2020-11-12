@@ -3,12 +3,14 @@ package EntidadLogica;
 import EntidadGrafica.*;
 import Visitor.*;
 import Inteligencia.*;
+import Juego.Juego;
 
 public abstract class  Entidad {
 	protected Visitor visitor;
 	protected EntidadGrafica entidadGrafica;
 	protected Inteligencia inteligencia;
-	protected int posicionX,posicionY;
+	protected Juego juego;
+	protected int velocidad;
 	
 	public Visitor getVisitor() {
 		return this.visitor;
@@ -21,21 +23,21 @@ public abstract class  Entidad {
 	public  Inteligencia getInteligencia() {
 		return this.inteligencia;
 	}
-	
-	public int getPosicionX() {
-		return this.posicionX;
+		
+	public Juego getJuego() {
+		return this.juego;
 	}
 	
-	public int getPosicionY() {
-		return this.posicionY;
+	public int getVelocidad() {
+		return this.velocidad;
 	}
 	
-	public void setPosicionX(int x) {
-		this.posicionX = x;
+	public void desaparecer() {
+		this.juego.getMapa().remove(this.getEntidadGrafica().getJLabel());
 	}
 	
-	public  void setPosicionY(int y) {
-		this.posicionY = y;
+	public void eliminar() {
+		this.juego.getListaEntidades().remove(this);
 	}
 	
 	public abstract void aceptarVisitor(Visitor v);

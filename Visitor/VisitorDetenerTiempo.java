@@ -2,8 +2,9 @@ package Visitor;
 
 import EntidadLogica.ArmaBasica;
 import EntidadLogica.DetenerTiempo;
+import EntidadLogica.Entidad;
 import EntidadLogica.MejorarArma;
-import EntidadLogica.Particula;
+import EntidadLogica.ProyectilBeta;
 import EntidadLogica.PersonajePrincipal;
 import EntidadLogica.Pocion;
 import EntidadLogica.PortadorAlpha;
@@ -11,8 +12,19 @@ import EntidadLogica.PortadorBeta;
 import EntidadLogica.SuperArma;
 
 public class VisitorDetenerTiempo extends Visitor {
+	
+	public VisitorDetenerTiempo(Entidad entidad) {
+		super(entidad);
+		// TODO Auto-generated constructor stub
+	}
+
+	
 	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
-		// TODO Auto-generated method stub
+		pp.getJuego().setTiempoDetenido(true);
+		//esperar dt.getTiempo()
+		pp.getJuego().setTiempoDetenido(false);
+		entidadActual.desaparecer();
+		entidadActual.eliminar();
 		
 	}
 
@@ -58,7 +70,7 @@ public class VisitorDetenerTiempo extends Visitor {
 	}
 
 
-	public void visitarParticula(Particula p) {
+	public void visitarParticula(ProyectilBeta p) {
 		// TODO Auto-generated method stub
 		
 	}

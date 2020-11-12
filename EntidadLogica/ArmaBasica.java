@@ -11,5 +11,11 @@ public class ArmaBasica extends ProyectilSanitario {
 		v.visitarArmaBasica(this);
 	}
 
+	@Override
+	public void daniar(EntidadPersonaje ep) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

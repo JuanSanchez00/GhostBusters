@@ -4,6 +4,11 @@ import EntidadLogica.*;
 
 public class VisitorSuperArma extends Visitor {
 
+	public VisitorSuperArma(Entidad entidad) {
+		super(entidad);
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
 		// TODO Auto-generated method stub
@@ -52,11 +57,5 @@ public class VisitorSuperArma extends Visitor {
 		
 	}
 
-	@Override
-	public void visitarParticula(Particula p) {
-		// TODO Auto-generated method stub
-		
-	}
-	
 }
 

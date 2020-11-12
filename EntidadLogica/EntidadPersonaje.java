@@ -15,7 +15,10 @@ public abstract class EntidadPersonaje extends Entidad {
 	public EntidadProyectil getProyectil() {
 		return this.proyectil;
 	}
-
+	
+	public void setProyectil(EntidadProyectil ps) {
+		this.proyectil = ps;
+	}
 	public boolean estaVivo() {
 		return cargaViral != 0;
 	}

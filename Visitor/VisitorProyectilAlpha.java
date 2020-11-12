@@ -1,11 +1,28 @@
 package Visitor;
 
-import EntidadLogica.*;
+import EntidadLogica.ArmaBasica;
+import EntidadLogica.DetenerTiempo;
+import EntidadLogica.Entidad;
+import EntidadLogica.MejorarArma;
+import EntidadLogica.PersonajePrincipal;
+import EntidadLogica.Pocion;
+import EntidadLogica.PortadorAlpha;
+import EntidadLogica.PortadorBeta;
+import EntidadLogica.ProyectilAlpha;
+import EntidadLogica.ProyectilBeta;
+import EntidadLogica.SuperArma;
 
-public class VisitorParticula extends Visitor {
+public class VisitorProyectilAlpha extends Visitor {
+	
+	public VisitorProyectilAlpha(Entidad entidad) {
+		super(entidad);
+		// TODO Auto-generated constructor stub
+	}
+	
 	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
-		// TODO Auto-generated method stub
-		
+		((ProyectilAlpha) entidadActual).daniar(pp);//PREGUNTAR SI ESTA BIEN EL CASTEO
+		entidadActual.desaparecer();
+		entidadActual.eliminar();
 	}
 
 	public void visitarPortadorAlpha(PortadorAlpha pa) {
@@ -50,7 +67,7 @@ public class VisitorParticula extends Visitor {
 	}
 
 
-	public void visitarParticula(Particula p) {
+	public void visitarParticula(ProyectilBeta p) {
 		// TODO Auto-generated method stub
 		
 	}

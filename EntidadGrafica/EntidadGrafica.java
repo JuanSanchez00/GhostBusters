@@ -7,13 +7,22 @@ import javax.swing.JLabel;
 public abstract class EntidadGrafica {
 	protected JLabel label;
 	protected String[] imagenes;
-	protected float altura,ancho;
+	protected int altura,ancho;
+	protected int posicionX,posicionY;
 	
-	public float getAltura() {
+	public int getPosicionX() {
+		return this.posicionX;
+	}
+	
+	public int getPosicionY() {
+		return this.posicionY;
+	}
+	
+	public int getAltura() {
 		return this.altura;
 	}
 	
-	public float getAncho() {
+	public int getAncho() {
 		return this.ancho;
 	}
 	
@@ -27,5 +36,13 @@ public abstract class EntidadGrafica {
 	
 	public ImageIcon getImagenDefault() {
 		return new ImageIcon(this.getClass().getResource(this.imagenes[0]));
+	}
+
+	public void setPosicionX(int x) {
+		this.posicionX = x;
+	}
+	
+	public  void setPosicionY(int y) {
+		this.posicionY = y;
 	}
 }

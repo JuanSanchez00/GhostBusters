@@ -3,6 +3,12 @@ package Visitor;
 import EntidadLogica.*;
 
 public class VisitorPortadorAlpha extends Visitor {
+	
+	public VisitorPortadorAlpha(Entidad entidad) {
+		super(entidad);
+		// TODO Auto-generated constructor stub
+	}
+
 	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
 		// TODO Auto-generated method stub
 		
@@ -50,7 +56,7 @@ public class VisitorPortadorAlpha extends Visitor {
 	}
 
 
-	public void visitarParticula(Particula p) {
+	public void visitarParticula(ProyectilBeta p) {
 		// TODO Auto-generated method stub
 		
 	}

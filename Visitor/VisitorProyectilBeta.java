@@ -1,26 +1,17 @@
 package Visitor;
 
-import EntidadLogica.ArmaBasica;
-import EntidadLogica.DetenerTiempo;
-import EntidadLogica.Entidad;
-import EntidadLogica.MejorarArma;
-import EntidadLogica.ProyectilBeta;
-import EntidadLogica.PersonajePrincipal;
-import EntidadLogica.Pocion;
-import EntidadLogica.PortadorAlpha;
-import EntidadLogica.PortadorBeta;
-import EntidadLogica.SuperArma;
+import EntidadLogica.*;
 
-public class VisitorPocion extends Visitor{
-
-	public VisitorPocion(Entidad entidad) {
+public class VisitorProyectilBeta extends Visitor {
+	
+	public VisitorProyectilBeta(Entidad entidad) {
 		super(entidad);
 		// TODO Auto-generated constructor stub
 	}
 
 	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
-		pp.setCargaViral(0);//vacia toda la carga viral
-		entidadActual.desaparecer();//la pocion desaparece del mapa
+		((ProyectilBeta) entidadActual).daniar(pp);
+		entidadActual.desaparecer();
 		entidadActual.eliminar();
 	}
 

@@ -1,9 +1,13 @@
 package Inteligencia;
 
+import EntidadLogica.Entidad;
+
 public abstract class Inteligencia {
-	protected float velocidad;
+	protected Entidad entidad;
 	
-	public float getVelocidad() {
-		return velocidad;
+	
+	public Inteligencia(Entidad entidad) {
+		this.entidad = entidad;
 	}
+
 }

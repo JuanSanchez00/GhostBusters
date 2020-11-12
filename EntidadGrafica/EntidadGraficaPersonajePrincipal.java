@@ -4,7 +4,6 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 public class EntidadGraficaPersonajePrincipal extends EntidadGrafica{
-	private String[] imagenes;
 	
 	public EntidadGraficaPersonajePrincipal(){
 		this.imagenes = new String[]{"/Grafica/Personaje Principal/PersonajePrincipalDefault.gif","/Grafica/Personaje Principal/PersonajePrincipalMoverIzquierda.gif","/Grafica/Personaje Principal/PersonajePrincipalMoverDerecha.gif","/Grafica/Personaje Principal/PersonajePrincipalMuerte.gif"};

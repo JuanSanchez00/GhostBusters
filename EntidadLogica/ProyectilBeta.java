@@ -1,12 +1,14 @@
 package EntidadLogica;
 
+import EntidadGrafica.EntidadGrafica;
+import Inteligencia.Inteligencia;
 import Visitor.Visitor;
 
-public class SuperArma extends ProyectilSanitario {
+public class ProyectilBeta extends ProyectilInfectado {
 
 	@Override
 	public void aceptarVisitor(Visitor v) {
-		v.visitarSuperArma(this);
+		v.visitarProyectilBeta(this);
 	}
 
 	@Override
@@ -14,4 +16,5 @@ public class SuperArma extends ProyectilSanitario {
 		// TODO Auto-generated method stub
 		
 	}
+
 }
