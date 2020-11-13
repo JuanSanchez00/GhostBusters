@@ -1,8 +1,15 @@
 package EntidadLogica;
 
+import Juego.*;
+
 public abstract class EntidadPersonaje extends Entidad {
 	protected int cargaViral;
 	protected EntidadProyectil proyectil;
+	
+	public EntidadPersonaje(Juego juego) {
+		super(juego);
+		proyectil = new ArmaBasica(juego);
+	}
 	
 	public int getCargaViral() {
 		return this.cargaViral;
@@ -23,12 +30,12 @@ public abstract class EntidadPersonaje extends Entidad {
 		return cargaViral != 0;
 	}
 	
-	public void morir() {
+	public void disparar(){
 		
 	}
 	
-	/*public void disparar();
-	public void morir();*/
-	
+	public void morir(){
+		
+	}
 	
 }

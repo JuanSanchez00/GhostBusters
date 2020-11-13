@@ -1,10 +1,17 @@
 package EntidadLogica;
 
-import EntidadGrafica.EntidadGrafica;
-import Inteligencia.Inteligencia;
-import Visitor.Visitor;
+import EntidadGrafica.*;
+import Juego.*;
+import Visitor.*;
 
 public class ProyectilBeta extends ProyectilInfectado {
+	
+	public ProyectilBeta(Juego juego) {
+		super(juego);
+		visitor = new VisitorProyectilBeta(this);
+		entidadGrafica = new EntidadGraficaProyectilBeta();
+		velocidad = 1;	
+}
 
 	@Override
 	public void aceptarVisitor(Visitor v) {
@@ -19,7 +26,7 @@ public class ProyectilBeta extends ProyectilInfectado {
 		}
 		else {
 			ep.setCargaViral(nuevaCargaViral);
-		}
+		}	
 	}
 
 }

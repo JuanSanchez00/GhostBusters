@@ -1,8 +1,17 @@
 package EntidadLogica;
 
-import Visitor.Visitor;
+import EntidadGrafica.*;
+import Juego.*;
+import Visitor.*;
 
 public class SuperArma extends ProyectilSanitario {
+
+	public SuperArma(Juego juego) {
+		super(juego);
+		visitor = new VisitorSuperArma(this);
+		entidadGrafica = new EntidadGraficaSuperArma();
+		velocidad = 1;
+	}
 
 	@Override
 	public void aceptarVisitor(Visitor v) {

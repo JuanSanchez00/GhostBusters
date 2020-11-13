@@ -10,8 +10,7 @@ public abstract class Inteligencia {
 		this.entidad = entidad;
 	}
 	
-	public void accionar() {
+	public void accionar(){
 		
 	}
-
 }

@@ -1,11 +1,19 @@
 package EntidadLogica;
 
-import EntidadGrafica.EntidadGrafica;
-import Inteligencia.Inteligencia;
-import Visitor.Visitor;
+import EntidadGrafica.*;
+import Inteligencia.*;
+import Juego.*;
+import Visitor.*;
 
 public class ProyectilAlpha extends ProyectilInfectado {
-
+	
+	public ProyectilAlpha(Juego juego){
+		super(juego);
+		visitor = new VisitorProyectilAlpha(this);
+		entidadGrafica = new EntidadGraficaProyectilAlpha();
+		velocidad = 1;
+	}
+	
 	@Override
 	public void aceptarVisitor(Visitor v) {
 		v.visitarProyectilAlpha(this);

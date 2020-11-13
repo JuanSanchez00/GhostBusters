@@ -46,4 +46,10 @@ public class Juego {
 	public void setTiempoDetenido(boolean b) {
 		this.tiempoDetenido = b;
 	}
+	
+	public void detenerTiempo(){
+		for(Entidad e : listaEntidades){
+			e.cambiarInteligencias();
+		}
+	}
 }

@@ -7,8 +7,8 @@ public class InteligenciaEnemigos extends Inteligencia {
 	public InteligenciaEnemigos(Entidad entidad) {
 		super(entidad);
 	}
-
-	public void accionar() {
+	
+	public void accionar(){
 		
 	}
 }

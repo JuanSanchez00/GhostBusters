@@ -1,11 +1,19 @@
 package EntidadLogica;
 
-import EntidadGrafica.EntidadGrafica;
-import Inteligencia.Inteligencia;
-import Visitor.Visitor;
+import EntidadGrafica.*;
+import Inteligencia.*;
+import Visitor.*;
+import Juego.*;
 
 public class ArmaBasica extends ProyectilSanitario {
-
+	
+	public ArmaBasica(Juego juego){
+		super(juego);
+		visitor = new VisitorArmaBasica(this);
+		entidadGrafica = new EntidadGraficaArmaBasica();
+		velocidad = 1;
+	}
+	
 	@Override
 	public void aceptarVisitor(Visitor v) {
 		v.visitarArmaBasica(this);
@@ -21,6 +29,5 @@ public class ArmaBasica extends ProyectilSanitario {
 			ep.setCargaViral(nuevaCargaViral);
 		}
 	}
-
 
 }

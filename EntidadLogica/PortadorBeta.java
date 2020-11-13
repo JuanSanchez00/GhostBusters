@@ -1,10 +1,18 @@
 package EntidadLogica;
 
-import EntidadGrafica.EntidadGrafica;
-import Inteligencia.Inteligencia;
-import Visitor.Visitor;
+import EntidadGrafica.*;
+import Inteligencia.*;
+import Juego.*;
+import Visitor.*;
 
 public class PortadorBeta extends Enemigo {
+
+	public PortadorBeta(Juego juego) {
+		super(juego);
+		visitor = new VisitorPortadorBeta(this);
+		entidadGrafica = new EntidadGraficaPortadorBeta();
+		velocidad = 1;
+	}
 
 	@Override
 	public void aceptarVisitor(Visitor v) {

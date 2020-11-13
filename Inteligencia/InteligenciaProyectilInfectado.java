@@ -9,6 +9,6 @@ public class InteligenciaProyectilInfectado extends Inteligencia{
 	}
 	
 	public void accionar() {
-		
+
 	}
 }

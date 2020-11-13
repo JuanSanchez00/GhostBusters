@@ -9,7 +9,7 @@ public class InteligenciaProyectilSanitario extends Inteligencia {
 	}
 	
 	public void accionar() {
-		
-	}
-}
 
+	}
+	
+}
