@@ -23,6 +23,10 @@ public abstract class  Entidad {
 	public  Inteligencia getInteligencia() {
 		return this.inteligencia;
 	}
+	
+	public void setInteligencia(Inteligencia nuevaInteligencia) {
+		this.inteligencia = nuevaInteligencia;
+	}
 		
 	public Juego getJuego() {
 		return this.juego;

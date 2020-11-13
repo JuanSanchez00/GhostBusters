@@ -1,14 +1,14 @@
 package EntidadLogica;
 
 public abstract class EntidadPersonaje extends Entidad {
-	protected float cargaViral;
+	protected int cargaViral;
 	protected EntidadProyectil proyectil;
 	
-	public float getCargaViral() {
+	public int getCargaViral() {
 		return this.cargaViral;
 	}
 	
-	public void setCargaViral(float cv) {
+	public void setCargaViral(int cv) {
 		this.cargaViral = cv;
 	}
 	
@@ -23,10 +23,12 @@ public abstract class EntidadPersonaje extends Entidad {
 		return cargaViral != 0;
 	}
 	
-	/*public void disparar();*/
 	public void morir() {
-		this.getEntidadGrafica().
+		
 	}
+	
+	/*public void disparar();
+	public void morir();*/
 	
 	
 }

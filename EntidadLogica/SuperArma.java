@@ -11,7 +11,12 @@ public class SuperArma extends ProyectilSanitario {
 
 	@Override
 	public void daniar(EntidadPersonaje ep) {
-		// TODO Auto-generated method stub
-		
+		int nuevaCargaViral = ep.cargaViral - this.getDanio();
+		if(nuevaCargaViral <= 0) {
+			ep.morir();
+		}
+		else {
+			ep.setCargaViral(nuevaCargaViral);
+		}
 	}
 }

@@ -1,10 +1,10 @@
 package EntidadLogica;
 
 public abstract class EfectoTemporal extends EntidadPremio {
-	protected float tiempo;
+	protected int tiempo;
 	
 	
-	public float getTiempo() {
+	public int getTiempo() {
 		return this.tiempo;
 	}
 

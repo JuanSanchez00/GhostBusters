@@ -1,7 +1,13 @@
 package Visitor;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.Timer;
+
 import EntidadLogica.ArmaBasica;
 import EntidadLogica.DetenerTiempo;
+import EntidadLogica.EfectoTemporal;
 import EntidadLogica.Entidad;
 import EntidadLogica.EntidadProyectil;
 import EntidadLogica.MejorarArma;
@@ -24,10 +30,18 @@ public class VisitorMejorarArma extends Visitor {
 		SuperArma superArma = new SuperArma();
 		pp.setProyectil(superArma); 
 		pp.getJuego().getListaEntidades().add(superArma);
-		//esperar ma.getTiempo()
+		ActionListener accion = new ActionListener() {
+    		public void actionPerformed(ActionEvent ae) {
+    			
+    		}
+    	};
+    	Timer timer = new Timer(((MejorarArma) entidadActual).getTiempo(), accion);
+    	timer.start();
 		pp.setProyectil(armaAnterior);
 		entidadActual.desaparecer();
 		entidadActual.eliminar();
+		superArma.desaparecer();
+		superArma.eliminar();
 	}
 
 	public void visitarPortadorAlpha(PortadorAlpha pa) {

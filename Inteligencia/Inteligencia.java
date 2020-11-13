@@ -9,5 +9,9 @@ public abstract class Inteligencia {
 	public Inteligencia(Entidad entidad) {
 		this.entidad = entidad;
 	}
+	
+	public void accionar() {
+		
+	}
 
 }

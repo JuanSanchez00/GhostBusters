@@ -13,13 +13,13 @@ public class ProyectilAlpha extends ProyectilInfectado {
 
 	@Override
 	public void daniar(EntidadPersonaje ep) {
-		float nuevaCargaViral = (ep.getCargaViral() + this.getDanio());
-        if (nuevaCargaViral >= 100) {
-            ep.morir();
-        }
-        else {
-            ep.setCargaViral(nuevaCargaViral);
-        }
+		int nuevaCargaViral = (ep.getCargaViral() + this.getDanio());
+		if (nuevaCargaViral >= 100) {
+			ep.morir();
+		}
+		else {
+			ep.setCargaViral(nuevaCargaViral);
+		}
 	}
 
 }

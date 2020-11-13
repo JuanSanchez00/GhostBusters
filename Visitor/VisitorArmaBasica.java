@@ -11,13 +11,16 @@ public class VisitorArmaBasica extends Visitor {
 
 
 	public void visitarPortadorAlpha(PortadorAlpha pa) {
-		// TODO Auto-generated method stub
-		
+		((ArmaBasica) entidadActual).daniar(pa);
+		entidadActual.desaparecer();
+		entidadActual.eliminar();
 	}
 
 
 	public void visitarPortadorBeta(PortadorBeta pb) {
-		// TODO Auto-generated method stub
+		((ArmaBasica) entidadActual).daniar(pb);
+		entidadActual.desaparecer();
+		entidadActual.eliminar();
 		
 	}
 

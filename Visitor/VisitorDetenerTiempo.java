@@ -1,7 +1,13 @@
 package Visitor;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.Timer;
+
 import EntidadLogica.ArmaBasica;
 import EntidadLogica.DetenerTiempo;
+import EntidadLogica.EfectoTemporal;
 import EntidadLogica.Entidad;
 import EntidadLogica.MejorarArma;
 import EntidadLogica.ProyectilBeta;
@@ -21,8 +27,16 @@ public class VisitorDetenerTiempo extends Visitor {
 	
 	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
 		pp.getJuego().setTiempoDetenido(true);
-		//esperar dt.getTiempo()
+		pp.getJuego().cambiarInteligencias();
+		ActionListener accion = new ActionListener() {
+    		public void actionPerformed(ActionEvent ae) {
+    			
+    		}
+    	};
+    	Timer timer = new Timer(((EfectoTemporal) entidadActual).getTiempo(), accion);
+    	timer.start();
 		pp.getJuego().setTiempoDetenido(false);
+		pp.getJuego().cambiarInteligencias();
 		entidadActual.desaparecer();
 		entidadActual.eliminar();
 		
