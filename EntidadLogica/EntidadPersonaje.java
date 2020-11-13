@@ -23,8 +23,10 @@ public abstract class EntidadPersonaje extends Entidad {
 		return cargaViral != 0;
 	}
 	
-	/*public void disparar();
-	public void morir();*/
+	/*public void disparar();*/
+	public void morir() {
+		this.getEntidadGrafica().
+	}
 	
 	
 }

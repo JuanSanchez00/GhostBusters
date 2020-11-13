@@ -13,7 +13,12 @@ public class ArmaBasica extends ProyectilSanitario {
 
 	@Override
 	public void daniar(EntidadPersonaje ep) {
-		// TODO Auto-generated method stub
+		if(ep.cargaViral-this.getDanio()<=0) {
+			//ep.morir;
+		}
+		else {
+			ep.setCargaViral(ep.cargaViral-this.getDanio());
+		}
 		
 	}
 

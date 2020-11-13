@@ -13,7 +13,13 @@ public class ProyectilBeta extends ProyectilInfectado {
 
 	@Override
 	public void daniar(EntidadPersonaje ep) {
-		// TODO Auto-generated method stub
+		float nuevaCargaViral = (ep.getCargaViral() + this.getDanio());
+        if (nuevaCargaViral >= 100) {
+            ep.morir();
+        }
+        else {
+            ep.setCargaViral(nuevaCargaViral);
+        }
 		
 	}
 
