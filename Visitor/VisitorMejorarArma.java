@@ -27,7 +27,7 @@ public class VisitorMejorarArma extends Visitor {
 	
 	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
 		EntidadProyectil armaAnterior = pp.getProyectil();
-		SuperArma superArma = new SuperArma();
+		SuperArma superArma = new SuperArma(pp.getJuego());
 		pp.setProyectil(superArma); 
 		pp.getJuego().getListaEntidades().add(superArma);
 		ActionListener accion = new ActionListener() {

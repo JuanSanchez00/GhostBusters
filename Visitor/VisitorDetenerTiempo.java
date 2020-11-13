@@ -27,7 +27,7 @@ public class VisitorDetenerTiempo extends Visitor {
 	
 	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
 		pp.getJuego().setTiempoDetenido(true);
-		pp.getJuego().cambiarInteligencias();
+		pp.getJuego().detenerTiempo();
 		ActionListener accion = new ActionListener() {
     		public void actionPerformed(ActionEvent ae) {
     			
@@ -36,7 +36,7 @@ public class VisitorDetenerTiempo extends Visitor {
     	Timer timer = new Timer(((EfectoTemporal) entidadActual).getTiempo(), accion);
     	timer.start();
 		pp.getJuego().setTiempoDetenido(false);
-		pp.getJuego().cambiarInteligencias();
+		pp.getJuego().detenerTiempo();
 		entidadActual.desaparecer();
 		entidadActual.eliminar();
 		
