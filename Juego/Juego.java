@@ -17,6 +17,8 @@ public class Juego {
 	public Juego() {
 		nivelActual = new Nivel1();
 		listaEntidades = nivelActual.getListaEntidades();
+		ancho = 700;
+		altura = 700;	
 	}
 	
 	public InterfazJuego getMapa() {
@@ -56,4 +58,22 @@ public class Juego {
 			e.setInteligencia(e.getInteligencia().getInteligenciaAnterior());
 		}
 	}
+
+	public EntidadPremio getPremio() {
+        EntidadPremio premio = null;
+        Random rnd = new Random();
+        int indice = rnd.nextInt(3);
+        switch(indice) {
+            case 0: 
+                premio = new DetenerTiempo(this);
+                break;
+            case 1: 
+                premio = new MejorarArma(this);
+                break;
+            case 2: 
+                premio = new Pocion(this);
+                break;
+        }
+        return premio;
+    }
 }

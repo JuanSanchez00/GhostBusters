@@ -8,8 +8,8 @@ public class EntidadGraficaPortadorAlpha extends EntidadGrafica{
 	public EntidadGraficaPortadorAlpha() {
 		this.imagenes = new String[]{"/Grafica/Enemigo/EnemigoAlphaDefault.gif","/Grafica/Enemigo/EnemigoAlphaMuerte.gif"};
 		this.label = new JLabel();
-		this.altura = 1;
-		this.ancho = 1;
+		this.altura = 500;
+		this.ancho = 300;
 	}
 	
 	public ImageIcon getImagenMuerte() {

@@ -8,8 +8,8 @@ public class EntidadGraficaPersonajePrincipal extends EntidadGrafica{
 	public EntidadGraficaPersonajePrincipal(){
 		this.imagenes = new String[]{"/Grafica/Personaje Principal/PersonajePrincipalDefault.gif","/Grafica/Personaje Principal/PersonajePrincipalMoverIzquierda.gif","/Grafica/Personaje Principal/PersonajePrincipalMoverDerecha.gif","/Grafica/Personaje Principal/PersonajePrincipalMuerte.gif"};
 		this.label = new JLabel();
-		this.altura = 1;
-		this.ancho = 1;
+		this.altura = 500;
+		this.ancho = 200;
 	}
 	
 	public ImageIcon getImagenMovientoIzquierda() {
