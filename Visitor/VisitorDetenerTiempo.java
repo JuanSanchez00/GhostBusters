@@ -16,6 +16,8 @@ import EntidadLogica.Pocion;
 import EntidadLogica.PortadorAlpha;
 import EntidadLogica.PortadorBeta;
 import EntidadLogica.SuperArma;
+import Inteligencia.Inteligencia;
+import Inteligencia.InteligenciaTiempoDetenido;
 
 public class VisitorDetenerTiempo extends Visitor {
 	
@@ -26,7 +28,6 @@ public class VisitorDetenerTiempo extends Visitor {
 
 	
 	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
-		pp.getJuego().setTiempoDetenido(true);
 		pp.getJuego().detenerTiempo();
 		ActionListener accion = new ActionListener() {
     		public void actionPerformed(ActionEvent ae) {
@@ -35,11 +36,9 @@ public class VisitorDetenerTiempo extends Visitor {
     	};
     	Timer timer = new Timer(((EfectoTemporal) entidadActual).getTiempo(), accion);
     	timer.start();
-		pp.getJuego().setTiempoDetenido(false);
-		pp.getJuego().detenerTiempo();
+		pp.getJuego().reanudarTiempo();
 		entidadActual.desaparecer();
 		entidadActual.eliminar();
-		
 	}
 
 	public void visitarPortadorAlpha(PortadorAlpha pa) {

@@ -13,4 +13,8 @@ public abstract class Inteligencia {
 	public void accionar(){
 		
 	}
+	
+	public Inteligencia getInteligenciaAnterior() {
+		return this;
+	}
 }

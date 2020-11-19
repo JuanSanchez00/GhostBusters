@@ -8,7 +8,12 @@ public abstract class ProyectilSanitario extends EntidadProyectil {
 	public ProyectilSanitario(Juego juego) {
 		super(juego);
 		inteligencia = new InteligenciaProyectilSanitario(this);
-		inteligenciaAux = new InteligenciaProyectilSanitario(this);
+	}
+	
+	@Override
+	public void setInteligencia() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

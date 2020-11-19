@@ -30,4 +30,7 @@ public class ArmaBasica extends ProyectilSanitario {
 		}
 	}
 
+	
+
+
 }

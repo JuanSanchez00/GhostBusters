@@ -29,5 +29,10 @@ public class ProyectilAlpha extends ProyectilInfectado {
 			ep.setCargaViral(nuevaCargaViral);
 		}
 	}
+	
+	@Override
+	public void setInteligencia() {
+		inteligencia = new InteligenciaEnemigos(this);
+	}
 
 }

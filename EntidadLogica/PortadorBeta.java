@@ -18,5 +18,10 @@ public class PortadorBeta extends Enemigo {
 	public void aceptarVisitor(Visitor v) {
 		v.visitarPortadorBeta(this);
 	}
+	
+	@Override
+	public void setInteligencia() {
+		inteligencia = new InteligenciaEnemigos(this);
+	}
 
 }

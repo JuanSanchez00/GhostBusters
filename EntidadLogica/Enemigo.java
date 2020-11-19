@@ -10,4 +10,5 @@ public abstract class Enemigo extends EntidadPersonaje {
 		inteligencia = new InteligenciaEnemigos(this);
 	}
 
+
 }
