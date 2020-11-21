@@ -9,6 +9,5 @@ public abstract class Enemigo extends EntidadPersonaje {
 		super(juego);
 		inteligencia = new InteligenciaEnemigos(this);
 	}
-
-
+	
 }

@@ -1,7 +1,6 @@
 package EntidadLogica;
 
 import EntidadGrafica.*;
-import Inteligencia.InteligenciaEnemigos;
 import Juego.*;
 import Visitor.*;
 
@@ -28,11 +27,6 @@ public class ProyectilBeta extends ProyectilInfectado {
 		else {
 			ep.setCargaViral(nuevaCargaViral);
 		}	
-	}
-	
-	@Override
-	public void setInteligencia() {
-		inteligencia = new InteligenciaEnemigos(this);
 	}
 
 }

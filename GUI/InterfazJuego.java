@@ -1,6 +1,7 @@
 package GUI;
 
 import java.awt.Color;
+
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,13 +21,17 @@ import Inteligencia.*;
 public class InterfazJuego extends JFrame {
 	private JPanelBackground mapa;
 	private Juego juego;
-	private PortadorAlpha enemigo;
+	private ProyectilAlpha p;
+	private JLabel label;
+	static AutoRemove removedor;
+	private MejorarArma m;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					InterfazJuego frame = new InterfazJuego();
 					frame.setVisible(true);
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -38,12 +43,12 @@ public class InterfazJuego extends JFrame {
 		setResizable(false);
 		setBounds(100, 100, 700, 700);
 		mapa = new JPanelBackground();
-		mapa.setBackground("C:\\Users\\Genaro\\Desktop\\Gena\\mapa1.png");
+		mapa.setBackground("C:\\Users\\Genaro\\eclipse-workspace\\ProyectoJuego\\src\\Graficas\\Mapas\\mapa1.png");
 		mapa.setLayout(null);
 		
 		setContentPane(mapa);
 		
-		juego = new Juego();
+		juego = new Juego(this);
 		
 		/*PersonajePrincipal jugador = new PersonajePrincipal(juego);
 		jugador.getEntidadGrafica().setPosicionX(50);
@@ -76,10 +81,75 @@ public class InterfazJuego extends JFrame {
     	Timer timer = new Timer(1000, accion);
     	timer.start();*/
 		
+		/*p = new ProyectilAlpha(juego);
+		p.getEntidadGrafica().setPosicionX(50);
+		p.getEntidadGrafica().setPosicionY(50);
+		
+		JLabel pLabel = p.getEntidadGrafica().getJLabel();
+		pLabel.setIcon(p.getEntidadGrafica().getImagenDefault());
+		pLabel.setSize(500,500);
+		pLabel.setLocation(p.getEntidadGrafica().getPosicionX(), p.getEntidadGrafica().getPosicionY());
+		mapa.add(pLabel);
+		
+		ActionListener accion = new ActionListener() {
+    		public void actionPerformed(ActionEvent ae) {
+    			p.getInteligencia().accionar();
+    		}
+    	};
+    	
+    	Timer timer = new Timer(100, accion);
+    	timer.start();*/
+		
+		/*label = new JLabel("HOLA BROOO");
+		label.setBackground(Color.RED);
+		label.setVisible(true);
+		label.setOpaque(true);
+		label.setLocation(50, 50);
+		label.setSize(100,100);
+		mapa.add(label);
+		
+		ActionListener accion = new ActionListener() {
+    		public void actionPerformed(ActionEvent ae) {
+    			System.out.println("LA PUTA MADREEEE");
+    			mapa.remove(label);
+    		}
+    	};
+    	
+    	Timer timer = new Timer(5000, accion);
+    	timer.start();*/
+		
+		m = new MejorarArma(juego);
+		m.getEntidadGrafica().setPosicionX(0);
+		m.getEntidadGrafica().setPosicionY(0);
+		
+		JLabel mLabel = m.getEntidadGrafica().getJLabel();		
+		mLabel.setIcon(m.getEntidadGrafica().getImagenDefault());
+		mLabel.setSize(500, 500);
+		mLabel.setLocation(m.getEntidadGrafica().getPosicionX(),m.getEntidadGrafica().getPosicionY());
+		mapa.add(mLabel);
+		
+		ActionListener accion = new ActionListener() {
+    		public void actionPerformed(ActionEvent ae) {
+    			m.getInteligencia().accionar();
+    		}
+    	};
+    	
+    	Timer timer = new Timer(1, accion);
+    	timer.start();
+		
 	}
 	
 	public void removerEntidad(Entidad entidad) {
 		mapa.remove(entidad.getEntidadGrafica().getJLabel());
 	}
 	
+	public static void esperar(int segundos){
+        try {
+            Thread.sleep(segundos * 1000);
+         } catch (Exception e) {
+            System.out.println(e);
+         }
+    }
+	
 }
+

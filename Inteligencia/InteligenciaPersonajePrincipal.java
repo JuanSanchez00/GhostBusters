@@ -5,7 +5,7 @@ import java.awt.event.KeyListener;
 
 import EntidadLogica.Entidad;
 
-public class InteligenciaPersonajePrincipal extends Inteligencia{
+public class InteligenciaPersonajePrincipal extends Inteligencia implements KeyListener{
 
     public InteligenciaPersonajePrincipal(Entidad entidad) {
         super(entidad);

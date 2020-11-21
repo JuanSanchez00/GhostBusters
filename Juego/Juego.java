@@ -1,12 +1,14 @@
 package Juego;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 import javax.swing.JPanel;
 
 import EntidadLogica.*;
 import Fabrica.*;
 import GUI.InterfazJuego;
-import Inteligencia.InteligenciaTiempoDetenido;
+import Inteligencia.inteligenciaTiempoDetenido;
 
 public class Juego {
 	private List<Entidad> listaEntidades;
@@ -14,11 +16,12 @@ public class Juego {
 	private int ancho,altura;
 	private InterfazJuego mapa;
 	
-	public Juego() {
-		nivelActual = new Nivel1();
-		listaEntidades = nivelActual.getListaEntidades();
+	public Juego(InterfazJuego mapa) {
+		nivelActual = new Nivel1(this);
+		listaEntidades = new LinkedList<Entidad>();
 		ancho = 700;
 		altura = 700;	
+		this.mapa = mapa;
 	}
 	
 	public InterfazJuego getMapa() {
@@ -49,7 +52,7 @@ public class Juego {
 	
 	public void detenerTiempo() {
 		for(Entidad e : listaEntidades){
-			e.setInteligencia(new InteligenciaTiempoDetenido(e));
+			e.setInteligencia(new inteligenciaTiempoDetenido(e));
 		}
 	}
 	

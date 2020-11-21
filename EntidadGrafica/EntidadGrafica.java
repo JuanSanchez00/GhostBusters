@@ -35,7 +35,7 @@ public abstract class EntidadGrafica {
 	}
 	
 	public ImageIcon getImagenDefault() {
-		return new ImageIcon(this.getClass().getResource(this.imagenes[0]));
+		return new ImageIcon("C:\\Users\\Genaro\\eclipse-workspace\\ProyectoJuego\\src\\Graficas\\Premios\\Objeto Precioso\\SuperArma.gif");
 	}
 
 	public void setPosicionX(int x) {

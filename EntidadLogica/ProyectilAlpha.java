@@ -11,7 +11,7 @@ public class ProyectilAlpha extends ProyectilInfectado {
 		super(juego);
 		visitor = new VisitorProyectilAlpha(this);
 		entidadGrafica = new EntidadGraficaProyectilAlpha();
-		velocidad = 1;
+		velocidad = 10;
 	}
 	
 	@Override
@@ -28,11 +28,6 @@ public class ProyectilAlpha extends ProyectilInfectado {
 		else {
 			ep.setCargaViral(nuevaCargaViral);
 		}
-	}
-	
-	@Override
-	public void setInteligencia() {
-		inteligencia = new InteligenciaEnemigos(this);
 	}
 
 }

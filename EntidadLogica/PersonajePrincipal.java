@@ -10,24 +10,14 @@ public class PersonajePrincipal extends EntidadPersonaje{
 	public PersonajePrincipal(Juego juego) {
 		super(juego);
 		inteligencia = new InteligenciaPersonajePrincipal(this);
+		inteligenciaAux = inteligencia;
 		visitor = new VisitorPersonajePrincipal(this);
 		entidadGrafica = new EntidadGraficaPersonajePrincipal();
 		velocidad = 1;
 	}
-	
-	public void setInteligencia(Inteligencia inteligencia) {//no hace nada, para que al detener el tiempo pueda seguir moviendose
-		
-	}
-	
-	@Override
-	public void setInteligencia() {
-		
-	}
-	
+
 	@Override
 	public void aceptarVisitor(Visitor v) {
 		v.visitarPersonajePrincipal(this);
 	}
-
-	
 }

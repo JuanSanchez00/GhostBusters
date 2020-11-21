@@ -9,11 +9,13 @@ public abstract class  Entidad {
 	protected Visitor visitor;
 	protected EntidadGrafica entidadGrafica;
 	protected Inteligencia inteligencia;
+	protected Inteligencia inteligenciaAux;
 	protected Juego juego;
 	protected int velocidad;
 	
 	public Entidad(Juego juego){
 		this.juego = juego;
+		inteligenciaAux = new inteligenciaTiempoDetenido(this);
 	}
 	
 	public Visitor getVisitor() {
@@ -37,7 +39,7 @@ public abstract class  Entidad {
 	}
 	
 	public void desaparecer() {
-		this.juego.getMapa().removerEntidad(this);
+		this.juego.getMapa().remove(this.getEntidadGrafica().getJLabel());
 	}
 	
 	public void eliminar() {
@@ -46,7 +48,11 @@ public abstract class  Entidad {
 	
 	public abstract void aceptarVisitor(Visitor v);
 	
-	public abstract void setInteligencia();
+	public void cambiarInteligencias(){
+		Inteligencia aux = inteligencia;
+		inteligencia = inteligenciaAux;
+		inteligenciaAux = aux;
+	}
 	
 	public void setInteligencia(Inteligencia nuevaInteligencia) {
 		this.inteligencia = nuevaInteligencia;

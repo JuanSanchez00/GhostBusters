@@ -19,9 +19,4 @@ public class PortadorAlpha extends Enemigo{
 		v.visitarPortadorAlpha(this);
 	}
 
-
-	public void setInteligencia() {
-		inteligencia = new InteligenciaEnemigos(this);
-	}
-
 }

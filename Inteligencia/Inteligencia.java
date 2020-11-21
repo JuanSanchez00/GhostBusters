@@ -1,10 +1,8 @@
 package Inteligencia;
 
-import java.awt.event.KeyListener;
-
 import EntidadLogica.Entidad;
 
-public abstract class Inteligencia implements KeyListener{
+public abstract class Inteligencia{
 	protected Entidad entidad;
 	
 	
@@ -14,5 +12,9 @@ public abstract class Inteligencia implements KeyListener{
 	
 	public void accionar(){
 		
+	}
+	
+	public Inteligencia getInteligenciaAnterior() {
+		return this;
 	}
 }
