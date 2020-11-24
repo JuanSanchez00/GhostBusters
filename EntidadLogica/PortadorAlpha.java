@@ -18,5 +18,6 @@ public class PortadorAlpha extends Enemigo{
 	public void aceptarVisitor(Visitor v) {
 		v.visitarPortadorAlpha(this);
 	}
+	
 
 }

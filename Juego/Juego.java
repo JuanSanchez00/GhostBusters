@@ -8,13 +8,14 @@ import javax.swing.JPanel;
 import EntidadLogica.*;
 import Fabrica.*;
 import GUI.InterfazJuego;
-import Inteligencia.inteligenciaTiempoDetenido;
+import Inteligencia.InteligenciaTiempoDetenido;
 
 public class Juego {
 	private List<Entidad> listaEntidades;
 	private Nivel nivelActual;
 	private int ancho,altura;
 	private InterfazJuego mapa;
+	private int cantNiveles;
 	
 	public Juego(InterfazJuego mapa) {
 		nivelActual = new Nivel1(this);
@@ -22,6 +23,28 @@ public class Juego {
 		ancho = 700;
 		altura = 700;	
 		this.mapa = mapa;
+		this.cantNiveles = 2;
+	}
+	
+	public void inicializarNivel() {
+		listaEntidades.add(new PersonajePrincipal(this));
+		nivelActual.cargarEnemigos();
+	}
+	
+	public void chequearNivel() {
+		if (nivelActual.enemigosMuertos()) {//si ya no quedan enemigos vivos en el nivel actual
+			if (nivelActual.getOleadaActual() == nivelActual.getCantOleadas()) {
+				if (nivelActual.getNivelSiguiente() != null) {
+					nivelActual = nivelActual.getNivelSiguiente();
+				}
+				else {
+					//gano
+				}
+			}
+			else {
+				nivelActual.cargarEnemigos();
+			}
+		}
 	}
 	
 	public InterfazJuego getMapa() {
@@ -52,7 +75,7 @@ public class Juego {
 	
 	public void detenerTiempo() {
 		for(Entidad e : listaEntidades){
-			e.setInteligencia(new inteligenciaTiempoDetenido(e));
+			e.setInteligencia(new InteligenciaTiempoDetenido(e));
 		}
 	}
 	
@@ -79,4 +102,10 @@ public class Juego {
         }
         return premio;
     }
+	
+	public void accionarEntidades() {
+		for(Entidad e : listaEntidades) {
+			e.accionar();
+		}
+	}
 }

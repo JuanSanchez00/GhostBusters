@@ -18,5 +18,6 @@ public class PortadorBeta extends Enemigo {
 	public void aceptarVisitor(Visitor v) {
 		v.visitarPortadorBeta(this);
 	}
+	
 
 }

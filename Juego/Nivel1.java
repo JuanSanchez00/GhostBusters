@@ -1,5 +1,8 @@
 package Juego;
 
+import Fabrica.FabricaPortadorAlpha;
+import Fabrica.FabricaPortadorBeta;
+
 public class Nivel1 extends Nivel {
 	
 	public Nivel1(Juego juego){
@@ -8,6 +11,10 @@ public class Nivel1 extends Nivel {
 		cantidad[0] = 10;
 		cantidad[1] = 15;
 		siguiente = new Nivel2(juego);
+		listaFabricas.add(new FabricaPortadorAlpha(juego));
+		listaFabricas.add(new FabricaPortadorBeta(juego));
+		cantOleadas = 2;
 	}
 	
+
 }

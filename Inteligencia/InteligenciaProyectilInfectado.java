@@ -32,7 +32,7 @@ public class InteligenciaProyectilInfectado extends Inteligencia{
 		}
         if(y >= alturaJuego){
         	entidad.desaparecer();
-			entidad.eliminar();
+			//entidad.eliminar();
         }
 	}
 }

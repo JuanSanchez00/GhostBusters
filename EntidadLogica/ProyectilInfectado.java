@@ -20,4 +20,9 @@ public abstract class ProyectilInfectado extends EntidadProyectil{
 	public void setRangoActual(int rangoNuevo){
 		rango = rangoNuevo;
 	}
+	
+	@Override
+	public void setInteligenciaPropia() {
+		inteligencia = new InteligenciaProyectilInfectado(this);
+	}
 }

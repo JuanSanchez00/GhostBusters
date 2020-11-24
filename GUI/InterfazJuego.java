@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import EntidadLogica.*;
+import Hilos.MovimientoEntidades;
 import Juego.Juego;
 import Inteligencia.*;
 
@@ -23,7 +24,8 @@ public class InterfazJuego extends JFrame {
 	private Juego juego;
 	private ProyectilAlpha p;
 	private JLabel label;
-	static AutoRemove removedor;
+	private Enemigo enemigo;
+	//static AutoRemove removedor;
 	private MejorarArma m;
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -31,6 +33,7 @@ public class InterfazJuego extends JFrame {
 				try {
 					InterfazJuego frame = new InterfazJuego();
 					frame.setVisible(true);
+					frame.cargarEnemigos();
 
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,7 +46,7 @@ public class InterfazJuego extends JFrame {
 		setResizable(false);
 		setBounds(100, 100, 700, 700);
 		mapa = new JPanelBackground();
-		mapa.setBackground("C:\\Users\\Genaro\\eclipse-workspace\\ProyectoJuego\\src\\Graficas\\Mapas\\mapa1.png");
+		mapa.setBackground("C:\\Users\\aleja\\eclipse-workspace2\\Proeycto3TDP\\src\\Graficas\\Mapas\\mapa1.png");
 		mapa.setLayout(null);
 		
 		setContentPane(mapa);
@@ -61,25 +64,8 @@ public class InterfazJuego extends JFrame {
 		jugadorLabel.setLocation(jugador.getEntidadGrafica().getPosicionX(),jugador.getEntidadGrafica().getPosicionY());
 		this.addKeyListener(jugador.getInteligencia());
 		mapa.add(jugadorLabel);*/
-		
-		/*enemigo = new PortadorAlpha(juego);
-		enemigo.getEntidadGrafica().setPosicionX(50);
-		enemigo.getEntidadGrafica().setPosicionY(50);
-		
-		JLabel enemigoLabel = enemigo.getEntidadGrafica().getJLabel();
-		enemigoLabel.setIcon(enemigo.getEntidadGrafica().getImagenDefault());
-		enemigoLabel.setSize(300, 500);
-		enemigoLabel.setLocation(enemigo.getEntidadGrafica().getPosicionX(),enemigo.getEntidadGrafica().getPosicionY());
-		mapa.add(enemigoLabel);
-		
-		ActionListener accion = new ActionListener() {
-    		public void actionPerformed(ActionEvent ae) {
-    			enemigo.getInteligencia().accionar();
-    		}
-    	};
-    	
-    	Timer timer = new Timer(1000, accion);
-    	timer.start();*/
+	
+	
 		
 		/*p = new ProyectilAlpha(juego);
 		p.getEntidadGrafica().setPosicionX(50);
@@ -116,9 +102,9 @@ public class InterfazJuego extends JFrame {
     	};
     	
     	Timer timer = new Timer(5000, accion);
-    	timer.start();*/
+    	timer.start();
 		
-		m = new MejorarArma(juego);
+		/*m = new MejorarArma(juego);
 		m.getEntidadGrafica().setPosicionX(0);
 		m.getEntidadGrafica().setPosicionY(0);
 		
@@ -134,22 +120,30 @@ public class InterfazJuego extends JFrame {
     		}
     	};
     	
-    	Timer timer = new Timer(1, accion);
-    	timer.start();
+    	Timer timer = new Timer(10, accion);
+    	timer.start();*/
 		
+	}
+	
+	public void cargarEnemigos() throws InterruptedException {
+		enemigo = new PortadorAlpha(juego);
+		enemigo.getEntidadGrafica().setPosicionX(50);
+		enemigo.getEntidadGrafica().setPosicionY(50);
+		
+		JLabel enemigoLabel = enemigo.getEntidadGrafica().getJLabel();
+		enemigoLabel.setIcon(enemigo.getEntidadGrafica().getImagenDefault());
+		enemigoLabel.setSize(300, 500);
+		enemigoLabel.setLocation(enemigo.getEntidadGrafica().getPosicionX(),enemigo.getEntidadGrafica().getPosicionY());
+		mapa.add(enemigoLabel);
+		juego.getListaEntidades().add(enemigo);
+		MovimientoEntidades me=new MovimientoEntidades(juego);
+		me.start();
 	}
 	
 	public void removerEntidad(Entidad entidad) {
 		mapa.remove(entidad.getEntidadGrafica().getJLabel());
 	}
 	
-	public static void esperar(int segundos){
-        try {
-            Thread.sleep(segundos * 1000);
-         } catch (Exception e) {
-            System.out.println(e);
-         }
-    }
 	
 }
 

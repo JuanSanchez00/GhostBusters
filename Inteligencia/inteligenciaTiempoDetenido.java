@@ -2,9 +2,9 @@ package Inteligencia;
 
 import EntidadLogica.Entidad;
 
-public class inteligenciaTiempoDetenido extends Inteligencia{
+public class InteligenciaTiempoDetenido extends Inteligencia{
 
-	public inteligenciaTiempoDetenido(Entidad entidad) {
+	public InteligenciaTiempoDetenido(Entidad entidad) {
 		super(entidad);
 	}
 

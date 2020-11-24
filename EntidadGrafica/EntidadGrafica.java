@@ -35,7 +35,7 @@ public abstract class EntidadGrafica {
 	}
 	
 	public ImageIcon getImagenDefault() {
-		return new ImageIcon("C:\\Users\\Genaro\\eclipse-workspace\\ProyectoJuego\\src\\Graficas\\Premios\\Objeto Precioso\\SuperArma.gif");
+		return new ImageIcon("C:\\Users\\aleja\\eclipse-workspace2\\Proeycto3TDP\\src\\Graficas\\Enemigos\\EnemigoBetaDefault.gif");
 	}
 
 	public void setPosicionX(int x) {

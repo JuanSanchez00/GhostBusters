@@ -1,6 +1,7 @@
 package EntidadLogica;
 
 import EntidadGrafica.*;
+import Inteligencia.InteligenciaProyectilInfectado;
 import Juego.*;
 import Visitor.*;
 
