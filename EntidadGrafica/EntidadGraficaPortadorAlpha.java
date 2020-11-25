@@ -15,9 +15,9 @@ public class EntidadGraficaPortadorAlpha extends EntidadGrafica{
 		this.imagenes = new String[]{"/Grafica/Enemigo/EnemigoAlphaDefault.gif","/Grafica/Enemigo/EnemigoAlphaMuerte.gif"};
 		this.altura = 500;
 		this.ancho = 300;
-		this.posicionX = -altura;
+		this.posicionY = -altura;
 		Random rnd = new Random();
-	    int indice = rnd.nextInt();
+	    this.posicionX = rnd.nextInt(entidad.getJuego().getAncho()-ancho+1);
 	}
 	
 	public ImageIcon getImagenMuerte() {

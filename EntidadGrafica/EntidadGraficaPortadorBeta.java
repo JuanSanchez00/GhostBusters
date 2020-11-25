@@ -1,5 +1,7 @@
 package EntidadGrafica;
 
+import java.util.Random;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -13,6 +15,8 @@ public class EntidadGraficaPortadorBeta extends EntidadGrafica{
 		this.imagenes = new String[]{"/Grafica/Enemigo/EnemigoBetaDefault.gif","/Grafica/Enemigo/EnemigoBetaMuerte.gif"};
 		this.altura = 1;
 		this.ancho = 1;
+		Random rnd = new Random();
+	    this.posicionX = rnd.nextInt(entidad.getJuego().getAncho()-ancho+1);
 	}
 	
 	public ImageIcon getImagenMuerte() {
