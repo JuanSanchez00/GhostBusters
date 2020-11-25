@@ -10,7 +10,7 @@ public class PortadorBeta extends Enemigo {
 	public PortadorBeta(Juego juego) {
 		super(juego);
 		visitor = new VisitorPortadorBeta(this);
-		entidadGrafica = new EntidadGraficaPortadorBeta();
+		entidadGrafica = new EntidadGraficaPortadorBeta(this);
 		velocidad = 1;
 	}
 

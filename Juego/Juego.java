@@ -27,7 +27,7 @@ public class Juego {
 	}
 	
 	public void inicializarNivel() {
-		listaEntidades.add(new PersonajePrincipal(this));
+		//listaEntidades.add(new PersonajePrincipal(this));
 		nivelActual.cargarEnemigos();
 	}
 	

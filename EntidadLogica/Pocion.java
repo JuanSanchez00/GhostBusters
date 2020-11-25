@@ -9,7 +9,7 @@ public class Pocion extends ObjetoPrecioso {
 	public Pocion(Juego juego) {
 		super(juego);
 		visitor = new VisitorPocion(this);
-		entidadGrafica = new EntidadGraficaPocion();
+		entidadGrafica = new EntidadGraficaPocion(this);
 		velocidad = 1;
 	}
 

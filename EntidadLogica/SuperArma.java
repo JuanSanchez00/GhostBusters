@@ -9,7 +9,7 @@ public class SuperArma extends ProyectilSanitario {
 	public SuperArma(Juego juego) {
 		super(juego);
 		visitor = new VisitorSuperArma(this);
-		entidadGrafica = new EntidadGraficaSuperArma();
+		entidadGrafica = new EntidadGraficaSuperArma(this);
 		velocidad = 1;
 	}
 

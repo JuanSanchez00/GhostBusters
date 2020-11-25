@@ -11,7 +11,7 @@ public class PersonajePrincipal extends EntidadPersonaje{
 		super(juego);
 		inteligencia = new InteligenciaPersonajePrincipal(this);
 		visitor = new VisitorPersonajePrincipal(this);
-		entidadGrafica = new EntidadGraficaPersonajePrincipal();
+		entidadGrafica = new EntidadGraficaPersonajePrincipal(this);
 		velocidad = 1;
 	}
 

@@ -10,7 +10,7 @@ public class ArmaBasica extends ProyectilSanitario {
 	public ArmaBasica(Juego juego){
 		super(juego);
 		visitor = new VisitorArmaBasica(this);
-		entidadGrafica = new EntidadGraficaArmaBasica();
+		entidadGrafica = new EntidadGraficaArmaBasica(this);
 		velocidad = 1;
 	}
 	

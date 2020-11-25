@@ -16,7 +16,7 @@ public class InteligenciaEnemigos extends Inteligencia {
         int alturaJuego = entidad.getJuego().getAltura();
         int velocidad = entidad.getVelocidad();
         //si supera la altura del juego, arranca en la parte superior en -alturaEntidad
-        y = y + alturaEntidad + velocidad <= alturaJuego ? y + 50 : -alturaEntidad;
+        y = y + velocidad <= alturaJuego ? y + velocidad : -alturaEntidad;
         int x = entidad.getEntidadGrafica().getPosicionX();
         entidad.getEntidadGrafica().getJLabel().setLocation(x, y);
         entidad.getEntidadGrafica().setPosicionY(y);

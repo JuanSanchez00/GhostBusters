@@ -10,7 +10,7 @@ public class ProyectilAlpha extends ProyectilInfectado {
 	public ProyectilAlpha(Juego juego){
 		super(juego);
 		visitor = new VisitorProyectilAlpha(this);
-		entidadGrafica = new EntidadGraficaProyectilAlpha();
+		entidadGrafica = new EntidadGraficaProyectilAlpha(this);
 		velocidad = 10;
 	}
 	

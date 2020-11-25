@@ -9,7 +9,7 @@ public class DetenerTiempo extends EfectoTemporal {
 	public DetenerTiempo(Juego juego) {
 		super(juego);
 		visitor = new VisitorDetenerTiempo(this);
-		entidadGrafica = new EntidadGraficaDetenerTiempo();
+		entidadGrafica = new EntidadGraficaDetenerTiempo(this);
 		velocidad = 1;
 	}
 	

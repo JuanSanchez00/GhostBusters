@@ -4,11 +4,20 @@ import java.awt.Rectangle;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import EntidadLogica.Entidad;
+import Juego.Juego;
+
 public abstract class EntidadGrafica {
 	protected JLabel label;
 	protected String[] imagenes;
 	protected int altura,ancho;
 	protected int posicionX,posicionY;
+	protected Entidad entidad;
+	
+	public EntidadGrafica(Entidad entidad) {
+		this.label = new JLabel();
+		this.entidad = entidad;
+	}
 	
 	public int getPosicionX() {
 		return this.posicionX;

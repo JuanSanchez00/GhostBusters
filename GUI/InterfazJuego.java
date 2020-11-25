@@ -53,6 +53,12 @@ public class InterfazJuego extends JFrame {
 		
 		juego = new Juego(this);
 		
+		juego.inicializarNivel();
+		
+		
+		
+		
+		
 		/*PersonajePrincipal jugador = new PersonajePrincipal(juego);
 		jugador.getEntidadGrafica().setPosicionX(50);
 		jugador.getEntidadGrafica().setPosicionY(50);
@@ -64,8 +70,7 @@ public class InterfazJuego extends JFrame {
 		jugadorLabel.setLocation(jugador.getEntidadGrafica().getPosicionX(),jugador.getEntidadGrafica().getPosicionY());
 		this.addKeyListener(jugador.getInteligencia());
 		mapa.add(jugadorLabel);*/
-	
-	
+		
 		
 		/*p = new ProyectilAlpha(juego);
 		p.getEntidadGrafica().setPosicionX(50);

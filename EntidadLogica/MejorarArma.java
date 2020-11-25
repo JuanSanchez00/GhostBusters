@@ -9,7 +9,7 @@ public class MejorarArma extends EfectoTemporal {
 	public MejorarArma(Juego juego) {
 		super(juego);
 		visitor = new VisitorMejorarArma(this);
-		entidadGrafica = new EntidadGraficaMejorarArma();
+		entidadGrafica = new EntidadGraficaMejorarArma(this);
 		velocidad = 1;
 	}
 

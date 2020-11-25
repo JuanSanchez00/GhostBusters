@@ -1,11 +1,13 @@
 package EntidadGrafica;
 import javax.swing.JLabel;
 
+import EntidadLogica.Entidad;
+
 public class EntidadGraficaSuperArma extends EntidadGrafica{
 
-	public EntidadGraficaSuperArma() {
+	public EntidadGraficaSuperArma(Entidad entidad) {
+		super(entidad);
 		this.imagenes = new String[]{"/Grafica/Proyectiles/ProyectilSuperArma.png"};
-		this.label = new JLabel();
 		this.altura = 1;
 		this.ancho = 1;
 	}

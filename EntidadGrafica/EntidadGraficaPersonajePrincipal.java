@@ -3,11 +3,14 @@ package EntidadGrafica;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
+import EntidadLogica.Entidad;
+import Juego.Juego;
+
 public class EntidadGraficaPersonajePrincipal extends EntidadGrafica{
 	
-	public EntidadGraficaPersonajePrincipal(){
+	public EntidadGraficaPersonajePrincipal(Entidad entidad){
+		super(entidad);
 		this.imagenes = new String[]{"/Grafica/Personaje Principal/PersonajePrincipalDefault.gif","/Grafica/Personaje Principal/PersonajePrincipalMoverIzquierda.gif","/Grafica/Personaje Principal/PersonajePrincipalMoverDerecha.gif","/Grafica/Personaje Principal/PersonajePrincipalMuerte.gif"};
-		this.label = new JLabel();
 		this.altura = 500;
 		this.ancho = 200;
 	}

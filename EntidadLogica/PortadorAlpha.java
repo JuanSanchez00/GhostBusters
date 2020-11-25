@@ -10,8 +10,8 @@ public class PortadorAlpha extends Enemigo{
 	public PortadorAlpha(Juego juego){
 		super(juego);
 		visitor = new VisitorPortadorAlpha(this);
-		entidadGrafica = new EntidadGraficaPortadorAlpha();
-		velocidad = 1;
+		entidadGrafica = new EntidadGraficaPortadorAlpha(this);
+		velocidad = 50;
 	}
 	
 	@Override
