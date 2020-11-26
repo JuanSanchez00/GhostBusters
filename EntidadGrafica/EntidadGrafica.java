@@ -16,6 +16,7 @@ public abstract class EntidadGrafica {
 	protected int altura,ancho;
 	protected int posicionX,posicionY;
 	protected Entidad entidad;
+	protected String imagenActual;
 	
 	public EntidadGrafica(Entidad entidad) {
 		this.label = new JLabel();
@@ -61,5 +62,17 @@ public abstract class EntidadGrafica {
 	public void agregarImagen(ImageIcon imagen){
 		Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(this.label.getWidth(), this.label.getHeight(), Image.SCALE_DEFAULT));
 		this.label.setIcon(icono);
+	}
+	
+	public String getImagenActual(){
+		return  imagenActual;
+	}
+	
+	public void setImagenActual(String i){
+		imagenActual = i;
+	}
+	
+	public String getImagenes(int i){
+		return imagenes[i];
 	}
 }
