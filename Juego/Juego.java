@@ -21,7 +21,7 @@ public class Juego {
 		nivelActual = new Nivel1(this);
 		listaEntidades = new LinkedList<Entidad>();
 		ancho = 700;
-		altura = 700;	
+		altura = 1000;	
 		this.mapa = mapa;
 		this.cantNiveles = 2;
 	}

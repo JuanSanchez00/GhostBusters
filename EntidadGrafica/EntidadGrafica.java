@@ -1,6 +1,9 @@
 package EntidadGrafica;
 
+import java.awt.Image;
 import java.awt.Rectangle;
+
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
@@ -44,7 +47,7 @@ public abstract class EntidadGrafica {
 	}
 	
 	public ImageIcon getImagenDefault() {
-		return new ImageIcon("C:\\Users\\aleja\\eclipse-workspace2\\Proeycto3TDP\\src\\Graficas\\Enemigos\\EnemigoBetaDefault.gif");
+		return new ImageIcon(this.imagenes[0]);
 	}
 
 	public void setPosicionX(int x) {
@@ -53,5 +56,10 @@ public abstract class EntidadGrafica {
 	
 	public  void setPosicionY(int y) {
 		this.posicionY = y;
+	}
+	
+	public void agregarImagen(ImageIcon imagen){
+		Icon icono = new ImageIcon(imagen.getImage().getScaledInstance(this.label.getWidth(), this.label.getHeight(), Image.SCALE_DEFAULT));
+		this.label.setIcon(icono);
 	}
 }

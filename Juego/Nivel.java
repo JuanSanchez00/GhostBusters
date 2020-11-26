@@ -18,6 +18,7 @@ public abstract class Nivel {
 	
 	public Nivel(Juego juego){
 		this.juego = juego;
+		listaEntidades = new LinkedList<Entidad>();
 		listaFabricas = new LinkedList<FabricaEnemigo>();
 		oleadaActual = 0;
 	}
@@ -36,8 +37,9 @@ public abstract class Nivel {
 		for(int i = 0; i < cantidad.length; i++){
 			fabricaActual = listaFabricas.get(i);
 			for(int j = 0; j < cantidad[i]; j++){
-				juego.getListaEntidades().add(fabricaActual.devolverEnemigo());
-				listaEntidades.add(fabricaActual.devolverEnemigo());
+				Entidad e = fabricaActual.devolverEnemigo();
+				juego.getListaEntidades().add(e);
+				listaEntidades.add(e);
 			}
 		}
 	}

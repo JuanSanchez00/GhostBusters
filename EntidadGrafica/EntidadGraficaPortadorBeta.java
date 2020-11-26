@@ -12,11 +12,14 @@ public class EntidadGraficaPortadorBeta extends EntidadGrafica{
 
 	public EntidadGraficaPortadorBeta(Entidad entidad){
 		super(entidad);
-		this.imagenes = new String[]{"/Grafica/Enemigo/EnemigoBetaDefault.gif","/Grafica/Enemigo/EnemigoBetaMuerte.gif"};
-		this.altura = 1;
-		this.ancho = 1;
+		this.imagenes = new String[]{"src\\Graficas\\Enemigos\\EnemigoBetaDefault.gif","/Grafica/Enemigo/EnemigoBetaMuerte.gif"};
 		Random rnd = new Random();
+	    this.label.setSize(75,75);
+	    this.altura = 75;
+	    this.ancho = 75;
 	    this.posicionX = rnd.nextInt(entidad.getJuego().getAncho()-ancho+1);
+	    this.posicionY = rnd.nextInt(altura)-altura*2;
+	    agregarImagen(this.getImagenDefault());
 	}
 	
 	public ImageIcon getImagenMuerte() {

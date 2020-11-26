@@ -9,7 +9,9 @@ public class EntidadGraficaProyectilBeta extends EntidadGrafica{
 		super(entidad);
 		this.entidad = entidad;
 		this.imagenes = new String[]{"/Grafica/Proyectiles/ProyectilAlpha.png"};
-		this.altura = 1;
-		this.ancho = 1;
+		this.label.setSize(40,40);
+		this.altura = 40;
+		this.ancho = 40;
+		agregarImagen(this.getImagenDefault());
 	}
 }

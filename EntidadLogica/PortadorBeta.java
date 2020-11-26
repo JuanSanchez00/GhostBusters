@@ -11,7 +11,7 @@ public class PortadorBeta extends Enemigo {
 		super(juego);
 		visitor = new VisitorPortadorBeta(this);
 		entidadGrafica = new EntidadGraficaPortadorBeta(this);
-		velocidad = 1;
+		velocidad = 10;
 	}
 
 	@Override

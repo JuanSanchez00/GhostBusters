@@ -10,7 +10,9 @@ public class EntidadGraficaArmaBasica extends EntidadGrafica{
 	public EntidadGraficaArmaBasica(Entidad entidad){
 		super(entidad);
 		this.imagenes = new String[]{"/Grafica/Proyectiles/ProyectilArmaBasica.png"};
-		this.altura = 1;
-		this.ancho = 1;
+		this.label.setSize(50,50);
+		this.altura = 50;
+		this.ancho = 50;
+		agregarImagen(this.getImagenDefault());
 	}
 }

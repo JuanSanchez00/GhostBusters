@@ -44,9 +44,9 @@ public class InterfazJuego extends JFrame {
 	
 	public InterfazJuego() {
 		setResizable(false);
-		setBounds(100, 100, 700, 700);
+		setBounds(100, 100, 700, 1000);
 		mapa = new JPanelBackground();
-		mapa.setBackground("C:\\Users\\aleja\\eclipse-workspace2\\Proeycto3TDP\\src\\Graficas\\Mapas\\mapa1.png");
+		mapa.setBackground("src\\Graficas\\Mapas\\mapa1.png");
 		mapa.setLayout(null);
 		
 		setContentPane(mapa);
@@ -54,10 +54,6 @@ public class InterfazJuego extends JFrame {
 		juego = new Juego(this);
 		
 		juego.inicializarNivel();
-		
-		
-		
-		
 		
 		/*PersonajePrincipal jugador = new PersonajePrincipal(juego);
 		jugador.getEntidadGrafica().setPosicionX(50);
@@ -127,23 +123,20 @@ public class InterfazJuego extends JFrame {
     	
     	Timer timer = new Timer(10, accion);
     	timer.start();*/
-		
+		PersonajePrincipal personaje = new PersonajePrincipal(juego);
+		juego.getListaEntidades().add(personaje);
+		this.addKeyListener(personaje.getInteligencia());
 	}
 	
-	public void cargarEnemigos() throws InterruptedException {
-		enemigo = new PortadorAlpha(juego);
-		enemigo.getEntidadGrafica().setPosicionX(50);
-		enemigo.getEntidadGrafica().setPosicionY(50);
-		
-		JLabel enemigoLabel = enemigo.getEntidadGrafica().getJLabel();
-		enemigoLabel.setIcon(enemigo.getEntidadGrafica().getImagenDefault());
-		enemigoLabel.setSize(300, 500);
-		enemigoLabel.setLocation(enemigo.getEntidadGrafica().getPosicionX(),enemigo.getEntidadGrafica().getPosicionY());
-		mapa.add(enemigoLabel);
-		juego.getListaEntidades().add(enemigo);
-		MovimientoEntidades me=new MovimientoEntidades(juego);
-		me.start();
-	}
+	public void cargarEnemigos() {
+        for(Entidad e:juego.getListaEntidades()) {
+            JLabel label = e.getEntidadGrafica().getJLabel();
+            label.setLocation(e.getEntidadGrafica().getPosicionX(),e.getEntidadGrafica().getPosicionY());
+            mapa.add(label);
+        }
+        MovimientoEntidades me=new MovimientoEntidades(juego);
+        me.start();
+    }
 	
 	public void removerEntidad(Entidad entidad) {
 		mapa.remove(entidad.getEntidadGrafica().getJLabel());
