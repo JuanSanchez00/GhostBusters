@@ -12,7 +12,6 @@ public class ProyectilPersonajePrincipal extends ProyectilSanitario{
         visitor = new VisitorProyectilPersonajePrincipal(this);
         entidadGrafica = new EntidadGraficaProyectilPersonajePrincipal(this,x,y);
         velocidad = 100;
-        System.out.println("D");
     }
 
     @Override

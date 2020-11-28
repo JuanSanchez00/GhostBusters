@@ -18,7 +18,6 @@ public class EntidadGraficaProyectilPersonajePrincipal extends EntidadGrafica{
         posicionX = x-ancho/2;
         posicionY = y;
 		this.label.setLocation(posicionX,posicionY);
-		System.out.println("E");
     }
 
     public ImageIcon getImagenSuperArma() {

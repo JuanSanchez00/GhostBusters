@@ -19,8 +19,8 @@ public class VisitorProyectilAlpha extends Visitor {
 	}
 	
 	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
-		((ProyectilAlpha) entidadActual).daniar(pp);//PREGUNTAR SI ESTA BIEN EL CASTEO
+		/*((ProyectilAlpha) entidadActual).daniar(pp);//PREGUNTAR SI ESTA BIEN EL CASTEO
 		entidadActual.desaparecer();
-		entidadActual.eliminar();
+		entidadActual.eliminar();*/
 	}
 }

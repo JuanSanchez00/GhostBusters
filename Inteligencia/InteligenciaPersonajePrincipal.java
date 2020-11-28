@@ -28,7 +28,6 @@ public class InteligenciaPersonajePrincipal extends Inteligencia{
             case KeyEvent.VK_SPACE:
             case KeyEvent.VK_X: {
                 ((PersonajePrincipal) entidad).disparar();
-                System.out.println("A");
                 break;
             }
         }
