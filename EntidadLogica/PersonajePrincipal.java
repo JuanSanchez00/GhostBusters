@@ -31,6 +31,7 @@ public class PersonajePrincipal extends EntidadPersonaje{
 
 	@Override
 	public EntidadProyectil getNuevoProyectil() {
-		return null;
+		System.out.println("C");
+		return new ProyectilPersonajePrincipal(juego,entidadGrafica.getPosicionX()+entidadGrafica.getAncho()/2,entidadGrafica.getPosicionY());
 	}
 }

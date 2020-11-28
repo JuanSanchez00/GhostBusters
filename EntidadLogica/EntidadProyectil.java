@@ -14,4 +14,8 @@ public abstract class EntidadProyectil extends Entidad {
 	}
 	
 	public abstract void daniar(EntidadPersonaje ep);
+	
+	public void setDanio(int d){
+		danio = d;
+	}
 }

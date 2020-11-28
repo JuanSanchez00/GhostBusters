@@ -20,7 +20,7 @@ public class InteligenciaEnemigos extends Inteligencia {
 		Random rnd = new Random();
 		if(delay == 0){
 			Enemigo e = (Enemigo) entidad;
-			entidad.getJuego().CrearProyectil(e.getNuevoProyectil());
+			e.disparar();
 			delay = rnd.nextInt(10)+5;
 		}else{
 			delay--;

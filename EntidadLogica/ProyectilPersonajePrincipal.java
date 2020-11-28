@@ -7,11 +7,12 @@ import Juego.*;
 
 public class ProyectilPersonajePrincipal extends ProyectilSanitario{
 
-    public ProyectilPersonajePrincipal(Juego juego){
+    public ProyectilPersonajePrincipal(Juego juego,int x, int y){
         super(juego);
         visitor = new VisitorProyectilPersonajePrincipal(this);
-        entidadGrafica = new EntidadGraficaProyectilPersonajePrincipal(this);
-        velocidad = 1;
+        entidadGrafica = new EntidadGraficaProyectilPersonajePrincipal(this,x,y);
+        velocidad = 100;
+        System.out.println("D");
     }
 
     @Override

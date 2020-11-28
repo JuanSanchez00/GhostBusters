@@ -113,6 +113,7 @@ public class Juego {
 	public void CrearProyectil(EntidadProyectil e){
 		entidadesEnEspera.add(e);
 		mapa.add(e.getEntidadGrafica().getJLabel());
+		System.out.println("F");
 	}
 	
 	public List<Entidad> getEntidadesEnEspera(){

@@ -30,7 +30,8 @@ public abstract class EntidadPersonaje extends Entidad {
 	}
 	
 	public void disparar(){
-		
+		this.getJuego().CrearProyectil(this.getNuevoProyectil());
+		System.out.println("B");
 	}
 	
 	public void morir(){

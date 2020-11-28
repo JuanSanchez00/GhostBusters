@@ -26,8 +26,9 @@ public class InteligenciaPersonajePrincipal extends Inteligencia{
                 break;
             }
             case KeyEvent.VK_SPACE:
-            case KeyEvent.VK_ENTER: {
-                //((PersonajePrincipal) entidad).disparar();
+            case KeyEvent.VK_X: {
+                ((PersonajePrincipal) entidad).disparar();
+                System.out.println("A");
                 break;
             }
         }

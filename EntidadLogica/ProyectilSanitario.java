@@ -7,12 +7,12 @@ public abstract class ProyectilSanitario extends EntidadProyectil {
 
 	public ProyectilSanitario(Juego juego) {
 		super(juego);
-		inteligencia = new InteligenciaProyectilSanitario(this);
+		inteligencia = new InteligenciaProyectilPersonajePrincipal(this);
 	}
 	
 	@Override
 	public void setInteligenciaPropia() {
-		inteligencia = new InteligenciaProyectilSanitario(this);
+		inteligencia = new InteligenciaProyectilPersonajePrincipal(this);
 	}
 
 }
