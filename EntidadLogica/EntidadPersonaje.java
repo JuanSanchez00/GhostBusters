@@ -8,7 +8,6 @@ public abstract class EntidadPersonaje extends Entidad {
 	
 	public EntidadPersonaje(Juego juego) {
 		super(juego);
-		proyectil = new ArmaBasica(juego);
 	}
 	
 	public int getCargaViral() {
@@ -31,11 +30,13 @@ public abstract class EntidadPersonaje extends Entidad {
 	}
 	
 	public void disparar(){
-		
+		this.getJuego().agregarEntidad(this.getNuevoProyectil());
 	}
 	
 	public void morir(){
 		
 	}
+	
+	public abstract EntidadProyectil getNuevoProyectil();
 	
 }

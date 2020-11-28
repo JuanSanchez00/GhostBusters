@@ -18,6 +18,11 @@ public class PortadorBeta extends Enemigo {
 	public void aceptarVisitor(Visitor v) {
 		v.visitarPortadorBeta(this);
 	}
+
+	@Override
+	public EntidadProyectil getNuevoProyectil() {
+		return new ProyectilBeta(juego,entidadGrafica.getPosicionX()+(entidadGrafica.getAncho()/2),entidadGrafica.getPosicionY()+entidadGrafica.getAltura());
+	}
 	
 
 }

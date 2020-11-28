@@ -12,6 +12,7 @@ import Inteligencia.InteligenciaTiempoDetenido;
 
 public class Juego {
 	private List<Entidad> listaEntidades;
+	private List<Entidad> entidadesEnEspera;
 	private Nivel nivelActual;
 	private int ancho,altura;
 	private InterfazJuego mapa;
@@ -20,14 +21,14 @@ public class Juego {
 	public Juego(InterfazJuego mapa) {
 		nivelActual = new Nivel1(this);
 		listaEntidades = new LinkedList<Entidad>();
+		entidadesEnEspera = new LinkedList<Entidad>();
 		ancho = 700;
-		altura = 1000;	
+		altura =700;	
 		this.mapa = mapa;
 		this.cantNiveles = 2;
 	}
 	
 	public void inicializarNivel() {
-		//listaEntidades.add(new PersonajePrincipal(this));
 		nivelActual.cargarEnemigos();
 	}
 	
@@ -38,7 +39,7 @@ public class Juego {
 					nivelActual = nivelActual.getNivelSiguiente();
 				}
 				else {
-					//gano
+					//gano el winner pa
 				}
 			}
 			else {
@@ -85,27 +86,40 @@ public class Juego {
 		}
 	}
 
-	public EntidadPremio getPremio() {
+	public void crearPremio(int x) {
         EntidadPremio premio = null;
         Random rnd = new Random();
         int indice = rnd.nextInt(3);
         switch(indice) {
             case 0: 
-                premio = new DetenerTiempo(this);
+                premio = new DetenerTiempo(this, x);
                 break;
             case 1: 
-                premio = new MejorarArma(this);
+                premio = new MejorarArma(this, x);
                 break;
             case 2: 
-                premio = new Pocion(this);
+                premio = new Pocion(this, x);
                 break;
         }
-        return premio;
+        agregarEntidad(premio);
     }
 	
 	public void accionarEntidades() {
 		for(Entidad e : listaEntidades) {
 			e.accionar();
 		}
+	}
+	
+	public void agregarEntidad(Entidad e){
+		entidadesEnEspera.add(e);
+		mapa.add(e.getEntidadGrafica().getJLabel());
+	}
+	
+	public List<Entidad> getEntidadesEnEspera(){
+		return entidadesEnEspera;
+	}
+	
+	public void eliminarEspera(){
+		entidadesEnEspera = new LinkedList<Entidad>();
 	}
 }

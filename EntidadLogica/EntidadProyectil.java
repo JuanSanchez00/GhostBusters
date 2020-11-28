@@ -3,7 +3,7 @@ package EntidadLogica;
 import Juego.Juego;
 
 public abstract class EntidadProyectil extends Entidad {
-	private int danio;
+	protected int danio;
 	
 	public EntidadProyectil(Juego juego) {
 		super(juego);
@@ -14,4 +14,8 @@ public abstract class EntidadProyectil extends Entidad {
 	}
 	
 	public abstract void daniar(EntidadPersonaje ep);
+	
+	public void setDanio(int d){
+		danio = d;
+	}
 }

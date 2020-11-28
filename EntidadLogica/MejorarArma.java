@@ -6,10 +6,10 @@ import Visitor.*;
 
 public class MejorarArma extends EfectoTemporal {
 
-	public MejorarArma(Juego juego) {
+	public MejorarArma(Juego juego, int x) {
 		super(juego);
 		visitor = new VisitorMejorarArma(this);
-		entidadGrafica = new EntidadGraficaMejorarArma(this);
+		entidadGrafica = new EntidadGraficaMejorarArma(this, x);
 		velocidad = 1;
 	}
 

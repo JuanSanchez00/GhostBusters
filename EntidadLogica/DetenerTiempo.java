@@ -6,11 +6,11 @@ import Visitor.*;
 
 public class DetenerTiempo extends EfectoTemporal {
 	
-	public DetenerTiempo(Juego juego) {
+	public DetenerTiempo(Juego juego, int x) {
 		super(juego);
 		visitor = new VisitorDetenerTiempo(this);
-		entidadGrafica = new EntidadGraficaDetenerTiempo(this);
-		velocidad = 1;
+		entidadGrafica = new EntidadGraficaDetenerTiempo(this, x);
+		velocidad = 50;
 	}
 	
 	@Override

@@ -6,11 +6,11 @@ import Visitor.*;
 
 public class Pocion extends ObjetoPrecioso {
 
-	public Pocion(Juego juego) {
+	public Pocion(Juego juego, int x) {
 		super(juego);
 		visitor = new VisitorPocion(this);
-		entidadGrafica = new EntidadGraficaPocion(this);
-		velocidad = 1;
+		entidadGrafica = new EntidadGraficaPocion(this, x);
+		velocidad = 50;
 	}
 
 	@Override

@@ -3,7 +3,9 @@ package Inteligencia;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import EntidadGrafica.EntidadGraficaPersonajePrincipal;
 import EntidadLogica.Entidad;
+import EntidadLogica.PersonajePrincipal;
 
 public class InteligenciaPersonajePrincipal extends Inteligencia{
 
@@ -24,14 +26,20 @@ public class InteligenciaPersonajePrincipal extends Inteligencia{
                 break;
             }
             case KeyEvent.VK_SPACE:
-            case KeyEvent.VK_ENTER: {
-                //((PersonajePrincipal) entidad).disparar();
+            case KeyEvent.VK_X: {
+                ((PersonajePrincipal) entidad).disparar();
                 break;
             }
         }
     }
 
     public void moverDerecha() {
+    	EntidadGraficaPersonajePrincipal entidadGraficaPersonaje = (EntidadGraficaPersonajePrincipal) entidad.getEntidadGrafica();
+    	if(entidad.getEntidadGrafica().getImagenActual() != entidad.getEntidadGrafica().getImagenes(2)){
+    		entidad.getEntidadGrafica().setImagenActual(entidad.getEntidadGrafica().getImagenes(2));
+    		entidad.getEntidadGrafica().getJLabel().setIcon(entidadGraficaPersonaje.getImagenMovientoDerecha());
+    		entidadGraficaPersonaje.agregarImagen(entidadGraficaPersonaje.getImagenMovientoDerecha());
+    	}
         int x = entidad.getEntidadGrafica().getPosicionX();
         int anchoEntidad = entidad.getEntidadGrafica().getAncho();
         int anchoJuego = entidad.getJuego().getAncho();
@@ -43,6 +51,12 @@ public class InteligenciaPersonajePrincipal extends Inteligencia{
     }
 
     public void moverIzquierda() {
+    	EntidadGraficaPersonajePrincipal entidadGraficaPersonaje = (EntidadGraficaPersonajePrincipal) entidad.getEntidadGrafica();
+    	if(entidad.getEntidadGrafica().getImagenActual() != entidad.getEntidadGrafica().getImagenes(1)){
+    		entidad.getEntidadGrafica().setImagenActual(entidad.getEntidadGrafica().getImagenes(1));
+    		entidad.getEntidadGrafica().getJLabel().setIcon(entidadGraficaPersonaje.getImagenMovientoIzquierda());
+    		entidadGraficaPersonaje.agregarImagen(entidadGraficaPersonaje.getImagenMovientoIzquierda());
+    	}
         int x = entidad.getEntidadGrafica().getPosicionX();
         int velocidad = entidad.getVelocidad();
         x = x  - velocidad >= 0 ? x  - velocidad : 0;
@@ -60,7 +74,10 @@ public class InteligenciaPersonajePrincipal extends Inteligencia{
 
     @Override
     public void keyReleased(KeyEvent e) {
-        // TODO Auto-generated method stub
+    	EntidadGraficaPersonajePrincipal entidadGraficaPersonaje = (EntidadGraficaPersonajePrincipal) entidad.getEntidadGrafica();
+    	entidad.getEntidadGrafica().setImagenActual(entidad.getEntidadGrafica().getImagenes(0));
+		entidad.getEntidadGrafica().getJLabel().setIcon(entidadGraficaPersonaje.getImagenDefault());
+		entidadGraficaPersonaje.agregarImagen(entidadGraficaPersonaje.getImagenDefault());
 
     }
 

@@ -7,11 +7,11 @@ import Visitor.*;
 
 public class ProyectilBeta extends ProyectilInfectado {
 	
-	public ProyectilBeta(Juego juego) {
+	public ProyectilBeta(Juego juego, int x, int y) {
 		super(juego);
 		visitor = new VisitorProyectilBeta(this);
-		entidadGrafica = new EntidadGraficaProyectilBeta(this);
-		velocidad = 1;	
+		entidadGrafica = new EntidadGraficaProyectilBeta(this,x,y);
+		velocidad =50;	
 }
 
 	@Override

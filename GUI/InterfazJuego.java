@@ -33,7 +33,7 @@ public class InterfazJuego extends JFrame {
 				try {
 					InterfazJuego frame = new InterfazJuego();
 					frame.setVisible(true);
-					frame.cargarEnemigos();
+					frame.cargarEntidades();
 
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -128,7 +128,7 @@ public class InterfazJuego extends JFrame {
 		this.addKeyListener(personaje.getInteligencia());
 	}
 	
-	public void cargarEnemigos() {
+	public void cargarEntidades() {
         for(Entidad e:juego.getListaEntidades()) {
             JLabel label = e.getEntidadGrafica().getJLabel();
             label.setLocation(e.getEntidadGrafica().getPosicionX(),e.getEntidadGrafica().getPosicionY());

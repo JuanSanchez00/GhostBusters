@@ -1,6 +1,6 @@
 package Visitor;
 
-import EntidadLogica.ArmaBasica;
+import EntidadLogica.ProyectilPersonajePrincipal;
 import EntidadLogica.DetenerTiempo;
 import EntidadLogica.Entidad;
 import EntidadLogica.MejorarArma;
@@ -9,65 +9,11 @@ import EntidadLogica.PersonajePrincipal;
 import EntidadLogica.Pocion;
 import EntidadLogica.PortadorAlpha;
 import EntidadLogica.PortadorBeta;
-import EntidadLogica.SuperArma;
 
 public class VisitorPocion extends Visitor{
 
 	public VisitorPocion(Entidad entidad) {
 		super(entidad);
 		// TODO Auto-generated constructor stub
-	}
-
-	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
-		pp.setCargaViral(0);//vacia toda la carga viral
-		entidadActual.desaparecer();//la pocion desaparece del mapa
-		entidadActual.eliminar();
-	}
-
-	public void visitarPortadorAlpha(PortadorAlpha pa) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	public void visitarPortadorBeta(PortadorBeta pb) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	public void visitarPocion(Pocion p) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	public void visitarMejorarArma(MejorarArma ma) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	public void visitarDetenerTiempo(DetenerTiempo dt) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	public void visitarArmaBasica(ArmaBasica ab) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	public void visitarSuperArma(SuperArma ab) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	public void visitarParticula(ProyectilBeta p) {
-		// TODO Auto-generated method stub
-		
 	}
 }
