@@ -3,7 +3,7 @@ package EntidadLogica;
 import Juego.Juego;
 
 public abstract class EntidadProyectil extends Entidad {
-	private int danio;
+	protected int danio;
 	
 	public EntidadProyectil(Juego juego) {
 		super(juego);

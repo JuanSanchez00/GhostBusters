@@ -33,11 +33,7 @@ public abstract class Visitor {
 		
 	}
 	
-	public void visitarArmaBasica(ArmaBasica ab) {
-		
-	}
-	
-	public void visitarSuperArma(SuperArma ab) {
+	public void visitarProyectilPersonajePrincipal(ProyectilPersonajePrincipal ab) {
 		
 	}
 	
