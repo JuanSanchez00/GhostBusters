@@ -18,7 +18,10 @@ public class MovimientoEntidades extends Thread {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			//juego.verificarColisiones();
 			juego.accionarEntidades();
+			juego.getListaEntidades().addAll(juego.getEntidadesEnEspera());
+			juego.eliminarEspera();
 		}
 	}
 }

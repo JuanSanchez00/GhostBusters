@@ -11,7 +11,7 @@ public class VisitorPortadorAlpha extends Visitor {
 
 	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
 		// TODO Auto-generated method stub
-		
+		System.out.println("AAAA");
 	}
 
 	public void visitarPortadorAlpha(PortadorAlpha pa) {

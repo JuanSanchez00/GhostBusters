@@ -16,7 +16,7 @@ public class EntidadGraficaPersonajePrincipal extends EntidadGrafica{
 		this.altura = 175;
 		this.ancho = 129;
 		agregarImagen(this.getImagenDefault());
-		posicionX = entidad.getJuego().getAncho()/2;
+		posicionX = (entidad.getJuego().getAncho()/2)-(this.ancho/2);
 		posicionY = entidad.getJuego().getAltura()-this.altura-50;
 	}
 	

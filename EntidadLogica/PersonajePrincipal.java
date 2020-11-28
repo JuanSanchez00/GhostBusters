@@ -12,7 +12,7 @@ public class PersonajePrincipal extends EntidadPersonaje{
 		inteligencia = new InteligenciaPersonajePrincipal(this);
 		visitor = new VisitorPersonajePrincipal(this);
 		entidadGrafica = new EntidadGraficaPersonajePrincipal(this);
-		velocidad = 1;
+		velocidad = 5;
 	}
 
 	@Override
@@ -27,5 +27,10 @@ public class PersonajePrincipal extends EntidadPersonaje{
 	@Override
 	public void setInteligenciaPropia() {
 
+	}
+
+	@Override
+	public EntidadProyectil getNuevoProyectil() {
+		return null;
 	}
 }

@@ -16,7 +16,7 @@ public class InteligenciaProyectilInfectado extends Inteligencia{
         int alturaJuego = entidad.getJuego().getAltura();
         int velocidad = entidad.getVelocidad();
         int rango = ((ProyectilInfectado) entidad).getRango();
-        ProyectilInfectado proyectil = ((ProyectilInfectado) entidad);
+        ProyectilInfectado proyectil = ((ProyectilInfectado) entidad);//es lo que dijo que no hagamos :c
         if(rango == 0){
 			entidad.desaparecer();
 			//entidad.eliminar();

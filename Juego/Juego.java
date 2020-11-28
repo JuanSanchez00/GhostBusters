@@ -12,6 +12,7 @@ import Inteligencia.InteligenciaTiempoDetenido;
 
 public class Juego {
 	private List<Entidad> listaEntidades;
+	private List<Entidad> entidadesEnEspera;
 	private Nivel nivelActual;
 	private int ancho,altura;
 	private InterfazJuego mapa;
@@ -20,6 +21,7 @@ public class Juego {
 	public Juego(InterfazJuego mapa) {
 		nivelActual = new Nivel1(this);
 		listaEntidades = new LinkedList<Entidad>();
+		entidadesEnEspera = new LinkedList<Entidad>();
 		ancho = 700;
 		altura = 1000;	
 		this.mapa = mapa;
@@ -27,7 +29,6 @@ public class Juego {
 	}
 	
 	public void inicializarNivel() {
-		//listaEntidades.add(new PersonajePrincipal(this));
 		nivelActual.cargarEnemigos();
 	}
 	
@@ -38,7 +39,7 @@ public class Juego {
 					nivelActual = nivelActual.getNivelSiguiente();
 				}
 				else {
-					//gano
+					//gano el winner pa
 				}
 			}
 			else {
@@ -107,5 +108,18 @@ public class Juego {
 		for(Entidad e : listaEntidades) {
 			e.accionar();
 		}
+	}
+	
+	public void CrearProyectil(EntidadProyectil e){
+		entidadesEnEspera.add(e);
+		mapa.add(e.getEntidadGrafica().getJLabel());
+	}
+	
+	public List<Entidad> getEntidadesEnEspera(){
+		return entidadesEnEspera;
+	}
+	
+	public void eliminarEspera(){
+		entidadesEnEspera = new LinkedList<Entidad>();
 	}
 }

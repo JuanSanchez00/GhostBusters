@@ -10,7 +10,7 @@ public class VisitorPersonajePrincipal extends Visitor {
 	}
 	
 	public void visitarPortadorAlpha(PortadorAlpha pa) {
-		
+		System.out.println("BBBB");
 	}
 	//PREGUNTAR QUE HACER SI UN PERSONAJE SE CRUZA CON UN FANTASMA
 	public void visitarPortadorBeta(PortadorBeta pb) {
