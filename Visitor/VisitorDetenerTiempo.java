@@ -19,6 +19,7 @@ import Inteligencia.Inteligencia;
 import Inteligencia.InteligenciaTiempoDetenido;
 
 public class VisitorDetenerTiempo extends Visitor {
+	private Timer timer;
 	
 	public VisitorDetenerTiempo(Entidad entidad) {
 		super(entidad);
@@ -26,16 +27,15 @@ public class VisitorDetenerTiempo extends Visitor {
 	}
 
 	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
+    	entidadActual.getJuego().EliminarEntidades(entidadActual);
 		pp.getJuego().detenerTiempo();
 		ActionListener accion = new ActionListener() {
     		public void actionPerformed(ActionEvent ae) {
-    			
+    			entidadActual.getJuego().reanudarTiempo();
+    			timer.stop();
     		}
     	};
-    	Timer timer = new Timer(((EfectoTemporal) entidadActual).getTiempo(), accion);
+    	timer = new Timer(((EfectoTemporal) entidadActual).getTiempo(), accion);
     	timer.start();
-		pp.getJuego().reanudarTiempo();
-		entidadActual.desaparecer();
-		entidadActual.eliminar();
 	}
 }

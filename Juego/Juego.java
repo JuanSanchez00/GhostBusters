@@ -13,7 +13,8 @@ import Inteligencia.InteligenciaTiempoDetenido;
 public class Juego {
 	private List<Entidad> listaEntidades;
 	private List<Entidad> entidadesEnEspera;
-	private Nivel nivelActual;
+	private List<Entidad> entidadesEliminar;
+ 	private Nivel nivelActual;
 	private int ancho,altura;
 	private InterfazJuego mapa;
 	private int cantNiveles;
@@ -22,8 +23,9 @@ public class Juego {
 		nivelActual = new Nivel1(this);
 		listaEntidades = new LinkedList<Entidad>();
 		entidadesEnEspera = new LinkedList<Entidad>();
+		entidadesEliminar = new LinkedList<Entidad>();
 		ancho = 700;
-		altura =700;	
+		altura = 1000;	
 		this.mapa = mapa;
 		this.cantNiveles = 2;
 	}
@@ -76,7 +78,7 @@ public class Juego {
 	
 	public void detenerTiempo() {
 		for(Entidad e : listaEntidades){
-			e.setInteligencia(new InteligenciaTiempoDetenido(e));
+			e.setInteligencia(new InteligenciaTiempoDetenido(e,e.getInteligencia()));
 		}
 	}
 	
@@ -115,11 +117,21 @@ public class Juego {
 		mapa.add(e.getEntidadGrafica().getJLabel());
 	}
 	
+	public void EliminarEntidades(Entidad e){
+		entidadesEliminar.add(e);
+		mapa.remove(e.getEntidadGrafica().getJLabel());
+	}
+	
 	public List<Entidad> getEntidadesEnEspera(){
 		return entidadesEnEspera;
 	}
 	
-	public void eliminarEspera(){
+	public List<Entidad> getEntidadesEliminar(){
+		return entidadesEliminar;
+	}
+	
+	public void reiniciarListas(){
 		entidadesEnEspera = new LinkedList<Entidad>();
+		entidadesEliminar = new LinkedList<Entidad>();
 	}
 }

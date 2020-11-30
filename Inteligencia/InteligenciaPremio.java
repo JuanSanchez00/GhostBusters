@@ -7,7 +7,7 @@ import EntidadLogica.Entidad;
 public class InteligenciaPremio extends Inteligencia{
 
 	public InteligenciaPremio(Entidad entidad) {
-		super(entidad);
+		super(entidad,null);
 	}
 
 	public void accionar() {

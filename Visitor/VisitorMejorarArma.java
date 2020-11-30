@@ -26,6 +26,7 @@ public class VisitorMejorarArma extends Visitor {
 	}
 	
 	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
+    	entidadActual.getJuego().EliminarEntidades(entidadActual);
 		EntidadGraficaProyectilPersonajePrincipal entidadGrafica = (EntidadGraficaProyectilPersonajePrincipal) pp.getEntidadGrafica();
 		int danioAnterior = pp.getProyectil().getDanio();
 		pp.getProyectil().setDanio(danioAnterior*2);

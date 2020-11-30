@@ -7,7 +7,7 @@ import EntidadLogica.*;
 public class InteligenciaProyectilInfectado extends Inteligencia{
 
 	public InteligenciaProyectilInfectado(Entidad entidad) {
-		super(entidad);
+		super(entidad,null);
 	}
 	
 	public void accionar() {

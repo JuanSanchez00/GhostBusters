@@ -10,7 +10,7 @@ import EntidadLogica.PersonajePrincipal;
 public class InteligenciaPersonajePrincipal extends Inteligencia{
 
     public InteligenciaPersonajePrincipal(Entidad entidad) {
-        super(entidad);
+        super(entidad,null);
     }
 
     public void keyPressed(KeyEvent arg0) {

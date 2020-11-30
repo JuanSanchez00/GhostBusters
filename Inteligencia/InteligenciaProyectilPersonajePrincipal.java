@@ -7,7 +7,7 @@ import EntidadLogica.Entidad;
 public class InteligenciaProyectilPersonajePrincipal extends Inteligencia {
 
 	public InteligenciaProyectilPersonajePrincipal(Entidad entidad) {
-		super(entidad);
+		super(entidad,null);
 	}
 	
 	public void accionar() {

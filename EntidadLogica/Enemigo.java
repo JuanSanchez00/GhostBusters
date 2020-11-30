@@ -10,6 +10,7 @@ public abstract class Enemigo extends EntidadPersonaje {
 	public Enemigo(Juego juego) {
 		super(juego);
 		inteligencia = new InteligenciaEnemigos(this);
+		this.cargaViral = 100;
 	}
 	
 	public void setInteligenciaPropia() {
@@ -17,13 +18,13 @@ public abstract class Enemigo extends EntidadPersonaje {
 	}
 	
 	public void morir() {
-		System.out.println("SALUDA AL DIEGOTE");
 		Random rnd = new Random();
 		int crearPremio = rnd.nextInt(10) +1;//entre 1 y 10
 		if (crearPremio == 1) {
 			juego.crearPremio(entidadGrafica.getPosicionX());
 		}
-		
+		this.juego.EliminarEntidades(this);
+
 	}
 	
 }

@@ -12,15 +12,13 @@ public class VisitorProyectilPersonajePrincipal extends Visitor {
 
 	public void visitarPortadorAlpha(PortadorAlpha pa) {
 		((ProyectilPersonajePrincipal) entidadActual).daniar(pa);
-		entidadActual.desaparecer();
-		//entidadActual.eliminar();
+		entidadActual.getJuego().EliminarEntidades(entidadActual);
 	}
 
 
 	public void visitarPortadorBeta(PortadorBeta pb) {
 		((ProyectilPersonajePrincipal) entidadActual).daniar(pb);
-		entidadActual.desaparecer();
-		//entidadActual.eliminar();
+		entidadActual.getJuego().EliminarEntidades(entidadActual);
 	}
 
 

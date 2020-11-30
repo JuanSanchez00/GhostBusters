@@ -6,8 +6,8 @@ import EntidadLogica.Entidad;
 
 public class InteligenciaTiempoDetenido extends Inteligencia{
 
-	public InteligenciaTiempoDetenido(Entidad entidad) {
-		super(entidad);
+	public InteligenciaTiempoDetenido(Entidad entidad , Inteligencia anterior){
+		super(entidad,anterior);
 	}
 
 	@Override
@@ -27,5 +27,8 @@ public class InteligenciaTiempoDetenido extends Inteligencia{
 		// TODO Auto-generated method stub
 		
 	}
-
+	
+	public Inteligencia getInteligenciaAnterior() {
+		return inteligenciaAnterior;
+	}
 }

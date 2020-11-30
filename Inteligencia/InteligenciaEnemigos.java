@@ -11,7 +11,7 @@ public class InteligenciaEnemigos extends Inteligencia {
 	private int delay;
 	
 	public InteligenciaEnemigos(Entidad entidad) {
-		super(entidad);
+		super(entidad,null);
 		Random rnd = new Random();
 		delay = rnd.nextInt(10)+5;
 	}
