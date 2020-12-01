@@ -25,7 +25,7 @@ public class Juego {
 		entidadesEnEspera = new LinkedList<Entidad>();
 		entidadesEliminar = new LinkedList<Entidad>();
 		ancho = 700;
-		altura = 1000;	
+		altura = 1000;
 		this.mapa = mapa;
 		this.cantNiveles = 2;
 	}
@@ -39,9 +39,10 @@ public class Juego {
 			if (nivelActual.getOleadaActual() == nivelActual.getCantOleadas()) {
 				if (nivelActual.getNivelSiguiente() != null) {
 					nivelActual = nivelActual.getNivelSiguiente();
+					mapa.ponerMapa();
 				}
 				else {
-					//gano el winner pa
+					System.out.println("gano");
 				}
 			}
 			else {
@@ -115,10 +116,13 @@ public class Juego {
 	public void agregarEntidad(Entidad e){
 		entidadesEnEspera.add(e);
 		mapa.add(e.getEntidadGrafica().getJLabel());
+		e.getEntidadGrafica().getJLabel().setLocation(e.getEntidadGrafica().getPosicionX(),e.getEntidadGrafica().getPosicionY());
 	}
 	
 	public void EliminarEntidades(Entidad e){
 		entidadesEliminar.add(e);
+		nivelActual.getListaEntidades().remove(e);
+		e.getEntidadGrafica().getJLabel().setVisible(false);
 		mapa.remove(e.getEntidadGrafica().getJLabel());
 	}
 	
@@ -134,4 +138,8 @@ public class Juego {
 		entidadesEnEspera = new LinkedList<Entidad>();
 		entidadesEliminar = new LinkedList<Entidad>();
 	}
+	
+	public Nivel getNivelActual(){
+		return nivelActual;
+	} 
 }

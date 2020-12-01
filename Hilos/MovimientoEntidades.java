@@ -23,6 +23,7 @@ public class MovimientoEntidades extends Thread {
 			juego.getListaEntidades().addAll(juego.getEntidadesEnEspera());
 			juego.getListaEntidades().removeAll(juego.getEntidadesEliminar());
 			juego.reiniciarListas();
+			juego.chequearNivel();
 		}
 	}
 }

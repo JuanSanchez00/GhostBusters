@@ -15,6 +15,7 @@ public abstract class Nivel {
 	protected Nivel siguiente;
 	protected Juego juego;
 	protected int oleadaActual, cantOleadas;
+	protected String mapa;
 	
 	public Nivel(Juego juego){
 		this.juego = juego;
@@ -38,7 +39,7 @@ public abstract class Nivel {
 			fabricaActual = listaFabricas.get(i);
 			for(int j = 0; j < cantidad[i]; j++){
 				Entidad e = fabricaActual.devolverEnemigo();
-				juego.getListaEntidades().add(e);
+				juego.agregarEntidad(e);
 				listaEntidades.add(e);
 			}
 		}
@@ -54,5 +55,9 @@ public abstract class Nivel {
 	
 	public int getCantOleadas() {
 		return cantOleadas;
+	}
+	
+	public String getMapa(){
+		return mapa;
 	}
 }

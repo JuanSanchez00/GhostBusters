@@ -45,9 +45,7 @@ public abstract class  Entidad {
 	}
 	
 	public abstract void aceptarVisitor(Visitor v);
-	
-	public abstract void setInteligenciaPropia();
-	
+		
 	public void setInteligencia(Inteligencia nuevaInteligencia) {
 		this.inteligencia = nuevaInteligencia;
 	}
