@@ -13,7 +13,8 @@ import Inteligencia.InteligenciaTiempoDetenido;
 public class Juego {
 	private List<Entidad> listaEntidades;
 	private List<Entidad> entidadesEnEspera;
-	private Nivel nivelActual;
+	private List<Entidad> entidadesEliminar;
+ 	private Nivel nivelActual;
 	private int ancho,altura;
 	private InterfazJuego mapa;
 	private int cantNiveles;
@@ -22,8 +23,9 @@ public class Juego {
 		nivelActual = new Nivel1(this);
 		listaEntidades = new LinkedList<Entidad>();
 		entidadesEnEspera = new LinkedList<Entidad>();
+		entidadesEliminar = new LinkedList<Entidad>();
 		ancho = 700;
-		altura =700;	
+		altura =700;
 		this.mapa = mapa;
 		this.cantNiveles = 2;
 	}
@@ -37,9 +39,10 @@ public class Juego {
 			if (nivelActual.getOleadaActual() == nivelActual.getCantOleadas()) {
 				if (nivelActual.getNivelSiguiente() != null) {
 					nivelActual = nivelActual.getNivelSiguiente();
+					mapa.ponerMapa();
 				}
 				else {
-					//gano el winner pa
+					System.out.println("gano");
 				}
 			}
 			else {
@@ -76,7 +79,7 @@ public class Juego {
 	
 	public void detenerTiempo() {
 		for(Entidad e : listaEntidades){
-			e.setInteligencia(new InteligenciaTiempoDetenido(e));
+			e.setInteligencia(new InteligenciaTiempoDetenido(e,e.getInteligencia()));
 		}
 	}
 	
@@ -92,13 +95,13 @@ public class Juego {
         int indice = rnd.nextInt(3);
         switch(indice) {
             case 0: 
-                premio = new DetenerTiempo(this, x);
-                break;
+                /*premio = new DetenerTiempo(this, x);
+                break;*/
             case 1: 
-                premio = new MejorarArma(this, x);
-                break;
+               /* premio = new MejorarArma(this, x);
+                break;*/
             case 2: 
-                premio = new Pocion(this, x);
+            	premio = new MejorarArma(this, x);
                 break;
         }
         agregarEntidad(premio);
@@ -113,13 +116,30 @@ public class Juego {
 	public void agregarEntidad(Entidad e){
 		entidadesEnEspera.add(e);
 		mapa.add(e.getEntidadGrafica().getJLabel());
+		e.getEntidadGrafica().getJLabel().setLocation(e.getEntidadGrafica().getPosicionX(),e.getEntidadGrafica().getPosicionY());
+	}
+	
+	public void EliminarEntidades(Entidad e){
+		entidadesEliminar.add(e);
+		nivelActual.getListaEntidades().remove(e);
+		e.getEntidadGrafica().getJLabel().setVisible(false);
+		mapa.remove(e.getEntidadGrafica().getJLabel());
 	}
 	
 	public List<Entidad> getEntidadesEnEspera(){
 		return entidadesEnEspera;
 	}
 	
-	public void eliminarEspera(){
-		entidadesEnEspera = new LinkedList<Entidad>();
+	public List<Entidad> getEntidadesEliminar(){
+		return entidadesEliminar;
 	}
+	
+	public void reiniciarListas(){
+		entidadesEnEspera = new LinkedList<Entidad>();
+		entidadesEliminar = new LinkedList<Entidad>();
+	}
+	
+	public Nivel getNivelActual(){
+		return nivelActual;
+	} 
 }

@@ -13,8 +13,5 @@ public abstract class EntidadPremio extends Entidad {
 	public void setInteligencia(Inteligencia inteligencia) {//no hace nada, para que al detener el tiempo pueda seguir moviendose
 
 	}
-
-	public void setInteligenciaPropia() {
-
-	}
+	
 }

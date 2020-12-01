@@ -3,11 +3,11 @@ package Visitor;
 import EntidadLogica.*;
 
 public abstract class Visitor {
-	protected Entidad entidadActual;
+	/*protected Entidad entidadActual;
 	
 	public Visitor (Entidad entidad) {
 		this.entidadActual = entidad;
-	}
+	}*/
 	
 	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
 		
@@ -33,7 +33,11 @@ public abstract class Visitor {
 		
 	}
 	
-	public void visitarProyectilPersonajePrincipal(ProyectilPersonajePrincipal ab) {
+	public void visitarArmaBasica(ArmaBasica ab) {
+		
+	}
+	
+	public void visitarSuperArma(SuperArma sa) {
 		
 	}
 	

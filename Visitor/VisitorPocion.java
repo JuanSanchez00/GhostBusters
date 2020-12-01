@@ -1,6 +1,5 @@
 package Visitor;
 
-import EntidadLogica.ProyectilPersonajePrincipal;
 import EntidadLogica.DetenerTiempo;
 import EntidadLogica.Entidad;
 import EntidadLogica.MejorarArma;
@@ -11,9 +10,10 @@ import EntidadLogica.PortadorAlpha;
 import EntidadLogica.PortadorBeta;
 
 public class VisitorPocion extends Visitor{
-
-	public VisitorPocion(Entidad entidad) {
-		super(entidad);
+	protected Pocion entidadActual;
+	
+	public VisitorPocion(Pocion entidad) {
+		entidadActual = entidad;
 		// TODO Auto-generated constructor stub
 	}
 }

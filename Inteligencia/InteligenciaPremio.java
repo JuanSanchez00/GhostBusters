@@ -3,26 +3,28 @@ package Inteligencia;
 import java.awt.event.KeyEvent;
 
 import EntidadLogica.Entidad;
+import EntidadLogica.EntidadPremio;
 
 public class InteligenciaPremio extends Inteligencia{
-
-	public InteligenciaPremio(Entidad entidad) {
-		super(entidad);
+	private EntidadPremio premio;
+	
+	public InteligenciaPremio(EntidadPremio premio) {
+		super(null);
+		this.premio = premio;
 	}
 
 	public void accionar() {
-		int y = entidad.getEntidadGrafica().getPosicionY();
-		int x = entidad.getEntidadGrafica().getPosicionX();
-        int alturaJuego = entidad.getJuego().getAltura();
-        int velocidad = entidad.getVelocidad();
+		int y = premio.getEntidadGrafica().getPosicionY();
+		int x = premio.getEntidadGrafica().getPosicionX();
+        int alturaJuego = premio.getJuego().getAltura();
+        int velocidad = premio.getVelocidad();
         if(y + velocidad >= alturaJuego){
-        	entidad.desaparecer();
-			//entidad.eliminar();
+        	premio.getJuego().EliminarEntidades(premio);
         }
         else{
         	y = y + velocidad;
-			entidad.getEntidadGrafica().setPosicionY(y);
-			entidad.getEntidadGrafica().getJLabel().setLocation(x, y);
+        	premio.getEntidadGrafica().setPosicionY(y);
+        	premio.getEntidadGrafica().getJLabel().setLocation(x, y);
         }
 	}
 

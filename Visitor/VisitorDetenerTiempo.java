@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 
 import javax.swing.Timer;
 
-import EntidadLogica.ProyectilPersonajePrincipal;
 import EntidadLogica.DetenerTiempo;
 import EntidadLogica.EfectoTemporal;
 import EntidadLogica.Entidad;
@@ -19,23 +18,23 @@ import Inteligencia.Inteligencia;
 import Inteligencia.InteligenciaTiempoDetenido;
 
 public class VisitorDetenerTiempo extends Visitor {
+	private Timer timer;
+	protected DetenerTiempo entidadActual;
 	
-	public VisitorDetenerTiempo(Entidad entidad) {
-		super(entidad);
-		// TODO Auto-generated constructor stub
+	public VisitorDetenerTiempo(DetenerTiempo entidad) {
+		entidadActual = entidad;
 	}
 
 	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
+    	entidadActual.getJuego().EliminarEntidades(entidadActual);
 		pp.getJuego().detenerTiempo();
 		ActionListener accion = new ActionListener() {
     		public void actionPerformed(ActionEvent ae) {
-    			
+    			entidadActual.getJuego().reanudarTiempo();
+    			timer.stop();
     		}
     	};
-    	Timer timer = new Timer(((EfectoTemporal) entidadActual).getTiempo(), accion);
+    	timer = new Timer( entidadActual.getTiempo(), accion);
     	timer.start();
-		pp.getJuego().reanudarTiempo();
-		entidadActual.desaparecer();
-		entidadActual.eliminar();
 	}
 }

@@ -9,7 +9,7 @@ public class EntidadGraficaMejorarArma extends EntidadGrafica {
 
 	public EntidadGraficaMejorarArma(Entidad entidad, int x) {
 		super(entidad);
-		this.imagenes = new String[]{"src\\Graficas\\Premios\\Efecto Temporal\\SuperArma.gif"};
+		this.imagenes = new String[]{"src\\Graficas\\Premios\\Objeto Precioso\\SuperArma.gif"};
 		this.label.setSize(50,50);
 		this.altura = 50;
 		this.ancho = 50;

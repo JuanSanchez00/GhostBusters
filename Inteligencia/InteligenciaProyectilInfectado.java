@@ -1,3 +1,4 @@
+  
 package Inteligencia;
 
 import java.awt.event.KeyEvent;
@@ -5,21 +6,21 @@ import java.awt.event.KeyEvent;
 import EntidadLogica.*;
 
 public class InteligenciaProyectilInfectado extends Inteligencia{
-
-	public InteligenciaProyectilInfectado(Entidad entidad) {
-		super(entidad);
+	private ProyectilInfectado proyectil;
+	
+	public InteligenciaProyectilInfectado(ProyectilInfectado proyectil) {
+		super(null);
+		this.proyectil = proyectil;
 	}
 	
 	public void accionar() {
-		int y = entidad.getEntidadGrafica().getPosicionY();
-		int x = entidad.getEntidadGrafica().getPosicionX();
-        int alturaJuego = entidad.getJuego().getAltura();
-        int velocidad = entidad.getVelocidad();
-        int rango = ((ProyectilInfectado) entidad).getRango();
-        ProyectilInfectado proyectil = ((ProyectilInfectado) entidad);//es lo que dijo que no hagamos :c
+		int y = proyectil.getEntidadGrafica().getPosicionY();
+		int x = proyectil.getEntidadGrafica().getPosicionX();
+        int alturaJuego = proyectil.getJuego().getAltura();
+        int velocidad = proyectil.getVelocidad();
+        int rango = proyectil.getRango();
         if(rango == 0){
-			entidad.desaparecer();
-			//entidad.eliminar();
+        	proyectil.getJuego().EliminarEntidades(proyectil);
 		}else{
 			if(rango > velocidad){
 				proyectil.setRangoActual(rango-velocidad);
@@ -30,11 +31,10 @@ public class InteligenciaProyectilInfectado extends Inteligencia{
 				y = y + rango;
 				proyectil.getEntidadGrafica().setPosicionY(y);
 			}
-			entidad.getEntidadGrafica().getJLabel().setLocation(x, y);
+			proyectil.getEntidadGrafica().getJLabel().setLocation(x, y);
 		}
         if(y >= alturaJuego){
-        	entidad.desaparecer();
-			//entidad.eliminar();
+        	proyectil.getJuego().EliminarEntidades(proyectil);
         }
 	}
 

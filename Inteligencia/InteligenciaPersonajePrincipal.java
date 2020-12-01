@@ -8,9 +8,11 @@ import EntidadLogica.Entidad;
 import EntidadLogica.PersonajePrincipal;
 
 public class InteligenciaPersonajePrincipal extends Inteligencia{
-
-    public InteligenciaPersonajePrincipal(Entidad entidad) {
-        super(entidad);
+	private PersonajePrincipal personajePrincipal;
+	
+    public InteligenciaPersonajePrincipal(PersonajePrincipal personajePrincipal) {
+        super(null);
+        this.personajePrincipal = personajePrincipal;
     }
 
     public void keyPressed(KeyEvent arg0) {
@@ -27,42 +29,42 @@ public class InteligenciaPersonajePrincipal extends Inteligencia{
             }
             case KeyEvent.VK_SPACE:
             case KeyEvent.VK_X: {
-                ((PersonajePrincipal) entidad).disparar();
+            	personajePrincipal.disparar();
                 break;
             }
         }
     }
 
     public void moverDerecha() {
-    	EntidadGraficaPersonajePrincipal entidadGraficaPersonaje = (EntidadGraficaPersonajePrincipal) entidad.getEntidadGrafica();
-    	if(entidad.getEntidadGrafica().getImagenActual() != entidad.getEntidadGrafica().getImagenes(2)){
-    		entidad.getEntidadGrafica().setImagenActual(entidad.getEntidadGrafica().getImagenes(2));
-    		entidad.getEntidadGrafica().getJLabel().setIcon(entidadGraficaPersonaje.getImagenMovientoDerecha());
-    		entidadGraficaPersonaje.agregarImagen(entidadGraficaPersonaje.getImagenMovientoDerecha());
+    	EntidadGraficaPersonajePrincipal entidadGrafica = (EntidadGraficaPersonajePrincipal) personajePrincipal.getEntidadGrafica();
+    	if(entidadGrafica.getImagenActual() != entidadGrafica.getImagenes(2)){
+    		entidadGrafica.setImagenActual(personajePrincipal.getEntidadGrafica().getImagenes(2));
+    		entidadGrafica.getJLabel().setIcon(entidadGrafica.getImagenMovientoDerecha());
+    		entidadGrafica.agregarImagen(entidadGrafica.getImagenMovientoDerecha());
     	}
-        int x = entidad.getEntidadGrafica().getPosicionX();
-        int anchoEntidad = entidad.getEntidadGrafica().getAncho();
-        int anchoJuego = entidad.getJuego().getAncho();
-        int velocidad = entidad.getVelocidad();
+        int x = entidadGrafica.getPosicionX();
+        int anchoEntidad = entidadGrafica.getAncho();
+        int anchoJuego = personajePrincipal.getJuego().getAncho();
+        int velocidad = personajePrincipal.getVelocidad();
         x = x + anchoEntidad + velocidad <= anchoJuego ? x + velocidad : anchoJuego - anchoEntidad;
-        int y = entidad.getEntidadGrafica().getPosicionY();
-        entidad.getEntidadGrafica().getJLabel().setLocation(x, y);
-        entidad.getEntidadGrafica().setPosicionX(x);
+        int y = entidadGrafica.getPosicionY();
+        entidadGrafica.getJLabel().setLocation(x, y);
+        entidadGrafica.setPosicionX(x);
     }
 
     public void moverIzquierda() {
-    	EntidadGraficaPersonajePrincipal entidadGraficaPersonaje = (EntidadGraficaPersonajePrincipal) entidad.getEntidadGrafica();
-    	if(entidad.getEntidadGrafica().getImagenActual() != entidad.getEntidadGrafica().getImagenes(1)){
-    		entidad.getEntidadGrafica().setImagenActual(entidad.getEntidadGrafica().getImagenes(1));
-    		entidad.getEntidadGrafica().getJLabel().setIcon(entidadGraficaPersonaje.getImagenMovientoIzquierda());
-    		entidadGraficaPersonaje.agregarImagen(entidadGraficaPersonaje.getImagenMovientoIzquierda());
+    	EntidadGraficaPersonajePrincipal entidadGrafica = (EntidadGraficaPersonajePrincipal) personajePrincipal.getEntidadGrafica();
+    	if(entidadGrafica.getImagenActual() != entidadGrafica.getImagenes(1)){
+    		entidadGrafica.setImagenActual(entidadGrafica.getImagenes(1));
+    		entidadGrafica.getJLabel().setIcon(entidadGrafica.getImagenMovientoIzquierda());
+    		entidadGrafica.agregarImagen(entidadGrafica.getImagenMovientoIzquierda());
     	}
-        int x = entidad.getEntidadGrafica().getPosicionX();
-        int velocidad = entidad.getVelocidad();
+        int x = entidadGrafica.getPosicionX();
+        int velocidad = personajePrincipal.getVelocidad();
         x = x  - velocidad >= 0 ? x  - velocidad : 0;
-        int y = entidad.getEntidadGrafica().getPosicionY();
-        entidad.getEntidadGrafica().getJLabel().setLocation(x, y);
-        entidad.getEntidadGrafica().setPosicionX(x);
+        int y = entidadGrafica.getPosicionY();
+        entidadGrafica.getJLabel().setLocation(x, y);
+        entidadGrafica.setPosicionX(x);
 
     }
 
@@ -74,10 +76,10 @@ public class InteligenciaPersonajePrincipal extends Inteligencia{
 
     @Override
     public void keyReleased(KeyEvent e) {
-    	EntidadGraficaPersonajePrincipal entidadGraficaPersonaje = (EntidadGraficaPersonajePrincipal) entidad.getEntidadGrafica();
-    	entidad.getEntidadGrafica().setImagenActual(entidad.getEntidadGrafica().getImagenes(0));
-		entidad.getEntidadGrafica().getJLabel().setIcon(entidadGraficaPersonaje.getImagenDefault());
-		entidadGraficaPersonaje.agregarImagen(entidadGraficaPersonaje.getImagenDefault());
+    	EntidadGraficaPersonajePrincipal entidadGrafica = (EntidadGraficaPersonajePrincipal) personajePrincipal.getEntidadGrafica();
+    	entidadGrafica.setImagenActual(entidadGrafica.getImagenes(0));
+    	entidadGrafica.getJLabel().setIcon(entidadGrafica.getImagenDefault());
+		entidadGrafica.agregarImagen(entidadGrafica.getImagenDefault());
 
     }
 

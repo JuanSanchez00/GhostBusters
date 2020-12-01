@@ -5,9 +5,11 @@ import java.awt.event.KeyEvent;
 import EntidadLogica.Entidad;
 
 public class InteligenciaTiempoDetenido extends Inteligencia{
-
-	public InteligenciaTiempoDetenido(Entidad entidad) {
-		super(entidad);
+	private Entidad entidad;
+	
+	public InteligenciaTiempoDetenido(Entidad entidad , Inteligencia anterior){
+		super(anterior);
+		this.entidad = entidad;
 	}
 
 	@Override
@@ -27,5 +29,8 @@ public class InteligenciaTiempoDetenido extends Inteligencia{
 		// TODO Auto-generated method stub
 		
 	}
-
+	
+	public Inteligencia getInteligenciaAnterior() {
+		return inteligenciaAnterior;
+	}
 }

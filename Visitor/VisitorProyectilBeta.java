@@ -3,9 +3,9 @@ package Visitor;
 import EntidadLogica.*;
 
 public class VisitorProyectilBeta extends Visitor {
-	
-	public VisitorProyectilBeta(Entidad entidad) {
-		super(entidad);
+	protected ProyectilBeta entidadActual;
+	public VisitorProyectilBeta(ProyectilBeta entidad) {
+		entidadActual = entidad;
 		// TODO Auto-generated constructor stub
 	}
 
