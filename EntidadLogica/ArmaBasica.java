@@ -36,9 +36,4 @@ public class ArmaBasica extends ProyectilSanitario {
         }
     }
     
-    public EntidadProyectil clone(int x, int y) {
-    	return new ArmaBasica(juego,x,y);
-    }
-    
-
 }

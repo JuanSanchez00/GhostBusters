@@ -1,6 +1,7 @@
 package EntidadLogica;
 
 import EntidadGrafica.*;
+import Fabrica.FabricaProyectilBasico;
 import Inteligencia.*;
 import Juego.Juego;
 import Visitor.*;
@@ -12,7 +13,7 @@ public class PersonajePrincipal extends EntidadPersonaje{
 		inteligencia = new InteligenciaPersonajePrincipal(this);
 		visitor = new VisitorPersonajePrincipal(this);
 		entidadGrafica = new EntidadGraficaPersonajePrincipal(this);
-		proyectil = new ArmaBasica(juego,entidadGrafica.getPosicionX(),entidadGrafica.getPosicionY());
+		proyectil = new FabricaProyectilBasico(juego);
 		velocidad = 5;
 		this.cargaViral = 0;
 	}
@@ -28,10 +29,7 @@ public class PersonajePrincipal extends EntidadPersonaje{
 
 	@Override
 	public EntidadProyectil getNuevoProyectil() {
-		//return new ProyectilPersonajePrincipal(juego,entidadGrafica.getPosicionX()+entidadGrafica.getAncho()/2,entidadGrafica.getPosicionY());
-		/*proyectil.getEntidadGrafica().setPosicionX(entidadGrafica.getPosicionX());
-		proyectil.getEntidadGrafica().setPosicionY(entidadGrafica.getPosicionY());*/
-		return proyectil.clone(entidadGrafica.getPosicionX()+entidadGrafica.getAncho()/2,entidadGrafica.getPosicionY());
+		return proyectil.devolverProyectil(entidadGrafica.getPosicionX()+entidadGrafica.getAncho()/2,entidadGrafica.getPosicionY());
 	}
 	
 	

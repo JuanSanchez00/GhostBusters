@@ -10,8 +10,7 @@ public class VisitorProyectilBeta extends Visitor {
 	}
 
 	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
-		/*((ProyectilBeta) entidadActual).daniar(pp);
-		entidadActual.desaparecer();
-		entidadActual.eliminar();*/
+		entidadActual.daniar(pp);
+		entidadActual.getJuego().EliminarEntidades(entidadActual);
 	}	
 }

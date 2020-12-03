@@ -34,10 +34,4 @@ public class SuperArma extends ProyectilSanitario {
             ep.setCargaViral(nuevaCargaViral);
         }
     }
-    
-    public EntidadProyectil clone(int x, int y) {
-    	return new SuperArma(juego,x,y);
-    }
-    
-
 }

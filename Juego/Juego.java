@@ -95,11 +95,11 @@ public class Juego {
         int indice = rnd.nextInt(3);
         switch(indice) {
             case 0: 
-                /*premio = new DetenerTiempo(this, x);
-                break;*/
+                premio = new DetenerTiempo(this, x);
+                break;
             case 1: 
-               /* premio = new MejorarArma(this, x);
-                break;*/
+                premio = new Pocion(this, x);
+                break;
             case 2: 
             	premio = new MejorarArma(this, x);
                 break;

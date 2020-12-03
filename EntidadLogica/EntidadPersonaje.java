@@ -1,10 +1,11 @@
 package EntidadLogica;
 
+import Fabrica.FabricaProyectil;
 import Juego.*;
 
 public abstract class EntidadPersonaje extends Entidad {
 	protected int cargaViral;
-	protected EntidadProyectil proyectil;
+	protected FabricaProyectil proyectil;
 	
 	public EntidadPersonaje(Juego juego) {
 		super(juego);
@@ -18,11 +19,11 @@ public abstract class EntidadPersonaje extends Entidad {
 		this.cargaViral = cv;
 	}
 	
-	public EntidadProyectil getProyectil() {
+	public FabricaProyectil getProyectil() {
 		return this.proyectil;
 	}
 	
-	public void setProyectil(EntidadProyectil ps) {
+	public void setProyectil(FabricaProyectil ps) {
 		this.proyectil = ps;
 	}
 	public boolean estaVivo() {

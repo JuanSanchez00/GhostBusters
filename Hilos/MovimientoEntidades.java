@@ -1,12 +1,15 @@
 package Hilos;
 
+import EntidadLogica.PersonajePrincipal;
 import Juego.Juego;
 
 public class MovimientoEntidades extends Thread {
 	protected Juego juego;
+	protected PersonajePrincipal personaje;
 	
-	public MovimientoEntidades(Juego juego) {
+	public MovimientoEntidades(Juego juego,PersonajePrincipal personaje) {
 		this.juego = juego;
+		this.personaje = personaje;
 	}
 	
 	public void run() {
@@ -24,6 +27,7 @@ public class MovimientoEntidades extends Thread {
 			juego.getListaEntidades().removeAll(juego.getEntidadesEliminar());
 			juego.reiniciarListas();
 			juego.chequearNivel();
+			System.out.println(personaje.getCargaViral());
 		}
 	}
 }

@@ -18,8 +18,4 @@ public abstract class EntidadProyectil extends Entidad {
 	public void setDanio(int d){
 		danio = d;
 	}
-	
-	  public EntidadProyectil clone(int x, int y) {
-		  return null;
-	  }
 }

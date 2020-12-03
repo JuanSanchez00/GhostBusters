@@ -6,6 +6,8 @@ import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
 import EntidadLogica.SuperArma;
+import Fabrica.FabricaProyectilBasico;
+import Fabrica.FabricaSuperProyectil;
 import EntidadLogica.ArmaBasica;
 import EntidadLogica.DetenerTiempo;
 import EntidadLogica.EfectoTemporal;
@@ -21,41 +23,24 @@ import EntidadLogica.PortadorBeta;
 public class VisitorMejorarArma extends Visitor {
 	protected MejorarArma entidadActual;
 	private Timer timer;
+	protected PersonajePrincipal personaje;
 	public VisitorMejorarArma(MejorarArma entidad) {
 		entidadActual = entidad;
 		// TODO Auto-generated constructor stub
 	}
 	
 	public void visitarPersonajePrincipal(PersonajePrincipal pp) {
+		personaje = pp;
 		entidadActual.getJuego().EliminarEntidades(entidadActual);
-		pp.setProyectil(new SuperArma(pp.getJuego(),0,0));
+		personaje.setProyectil(new FabricaSuperProyectil(personaje.getJuego()));
 		ActionListener accion = new ActionListener() {
     		public void actionPerformed(ActionEvent ae) {
-    			pp.setProyectil(new ArmaBasica(pp.getJuego(),0,0));
+    			personaje.setProyectil(new FabricaProyectilBasico(personaje.getJuego()));
     			timer.stop();
     		}
     	};
     	timer = new Timer( entidadActual.getTiempo(), accion);
     	timer.start();
-		
-		
-		
-    	/*entidadActual.getJuego().EliminarEntidades(entidadActual);
-		EntidadGraficaProyectilPersonajePrincipal entidadGraficaProyectil = (EntidadGraficaProyectilPersonajePrincipal) pp.getProyectil().getEntidadGrafica();
-		int danioAnterior = pp.getProyectil().getDanio();
-		pp.getProyectil().setDanio(danioAnterior*2);
-		System.out.println("Nuevo daño: "+pp.getProyectil().getDanio());
-		entidadGraficaProyectil.agregarImagen(entidadGraficaProyectil.getImagenSuperArma());
-		ActionListener accion = new ActionListener() {
-    		public void actionPerformed(ActionEvent ae) {
-    			pp.getProyectil().setDanio(danioAnterior);
-    			entidadGraficaProyectil.agregarImagen(entidadGraficaProyectil.getImagenDefault());
-    			timer.stop();
-    		}
-    	};
-    	timer = new Timer( entidadActual.getTiempo(), accion);
-    	timer.start();*/
-    	
     	
 	}
 }
