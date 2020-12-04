@@ -10,7 +10,7 @@ public class Pocion extends ObjetoPrecioso {
 		super(juego);
 		visitor = new VisitorPocion(this);
 		entidadGrafica = new EntidadGraficaPocion(this, x);
-		velocidad = 50;
+		velocidad = 15;
 	}
 
 	@Override

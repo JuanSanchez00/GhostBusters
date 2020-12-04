@@ -14,9 +14,9 @@ public class EntidadGraficaPortadorBeta extends EntidadGrafica{
 		super(entidad);
 		this.imagenes = new String[]{"src\\Graficas\\Enemigos\\EnemigoBetaDefault.gif","/Grafica/Enemigo/EnemigoBetaMuerte.gif"};
 		Random rnd = new Random();
-	    this.label.setSize(75,75);
 	    this.altura = 75;
 	    this.ancho = 75;
+		this.label.setSize(ancho,altura);
 	    this.posicionX = rnd.nextInt(entidad.getJuego().getAncho()-ancho+1);
 	    this.posicionY = rnd.nextInt(altura)-altura*2;
 	    agregarImagen(this.getImagenDefault());

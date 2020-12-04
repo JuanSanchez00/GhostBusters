@@ -11,8 +11,8 @@ public class ProyectilAlpha extends ProyectilInfectado {
 		super(juego);
 		visitor = new VisitorProyectilAlpha(this);
 		entidadGrafica = new EntidadGraficaProyectilAlpha(this,x,y);
-		velocidad = 50;
-		danio = 50;
+		velocidad = 5;
+		danio = 10;
 	}
 	
 	@Override

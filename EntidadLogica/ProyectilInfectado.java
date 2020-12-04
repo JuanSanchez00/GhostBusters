@@ -9,7 +9,7 @@ public abstract class ProyectilInfectado extends EntidadProyectil{
 	
 	public ProyectilInfectado(Juego juego) {
 		super(juego);
-		rango = 1000;
+		rango = 200;
 		inteligencia = new InteligenciaProyectilInfectado(this);
 	}
 	

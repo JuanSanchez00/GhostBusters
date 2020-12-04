@@ -10,5 +10,7 @@ public abstract class ProyectilSanitario extends EntidadProyectil {
 		inteligencia = new InteligenciaProyectilSanitario(this);
 	}
 	
-
+	public void setInteligencia(Inteligencia i){
+		
+	}
 }

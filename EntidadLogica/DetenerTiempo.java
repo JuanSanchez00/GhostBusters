@@ -10,7 +10,7 @@ public class DetenerTiempo extends EfectoTemporal {
 		super(juego);
 		visitor = new VisitorDetenerTiempo(this);
 		entidadGrafica = new EntidadGraficaDetenerTiempo(this, x);
-		velocidad = 50;
+		velocidad = 20;
 		tiempo = 3000;
 	}
 	

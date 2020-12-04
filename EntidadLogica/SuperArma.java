@@ -1,6 +1,7 @@
 package EntidadLogica;
 
 import EntidadGrafica.EntidadGraficaSuperArma;
+
 import Juego.Juego;
 import Visitor.Visitor;
 import Visitor.VisitorSuperArma;
@@ -11,7 +12,7 @@ public class SuperArma extends ProyectilSanitario {
 		super(juego);
         visitor = new VisitorSuperArma(this);
         entidadGrafica = new EntidadGraficaSuperArma(this,x,y);
-        velocidad = 100;
+        velocidad = 15;
         danio = 50;
     }
 

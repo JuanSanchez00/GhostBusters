@@ -16,6 +16,7 @@ public abstract class Nivel {
 	protected Juego juego;
 	protected int oleadaActual, cantOleadas;
 	protected String mapa;
+	protected int numero;
 	
 	public Nivel(Juego juego){
 		this.juego = juego;
@@ -59,5 +60,9 @@ public abstract class Nivel {
 	
 	public String getMapa(){
 		return mapa;
+	}
+	
+	public int getNumero(){
+		return numero;
 	}
 }

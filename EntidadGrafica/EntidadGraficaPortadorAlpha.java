@@ -13,11 +13,10 @@ public class EntidadGraficaPortadorAlpha extends EntidadGrafica{
 	public EntidadGraficaPortadorAlpha(Entidad entidad) {
 		super(entidad);
 		this.imagenes = new String[]{"src\\Graficas\\Enemigos\\EnemigoAlphaDefault.gif","/Grafica/Enemigo/EnemigoAlphaMuerte.gif"};
-		
 		Random rnd = new Random();
-	    this.label.setSize(75,75);
 	    this.altura = 75;
 	    this.ancho = 75;
+		this.label.setSize(ancho,altura);
 	    this.posicionX = rnd.nextInt(entidad.getJuego().getAncho()-ancho+1);
 	    this.posicionY = rnd.nextInt(altura+1)-altura*2;
 	    agregarImagen(this.getImagenDefault());

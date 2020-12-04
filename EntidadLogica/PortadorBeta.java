@@ -1,7 +1,7 @@
 package EntidadLogica;
 
 import EntidadGrafica.*;
-import Inteligencia.*;
+import Fabrica.FabricaProyectilBeta;
 import Juego.*;
 import Visitor.*;
 
@@ -11,7 +11,9 @@ public class PortadorBeta extends Enemigo {
 		super(juego);
 		visitor = new VisitorPortadorBeta(this);
 		entidadGrafica = new EntidadGraficaPortadorBeta(this);
-		velocidad = 10;
+		velocidad = 3;
+		proyectil = new FabricaProyectilBeta(juego);
+		cargaViral = 75;
 	}
 
 	@Override

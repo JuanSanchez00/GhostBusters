@@ -1,7 +1,22 @@
 package GUI;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.FontFormatException;
+import java.awt.GraphicsEnvironment;
+import java.awt.GridLayout;
+import java.io.File;
+import java.io.IOException;
+
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+
 import EntidadLogica.*;
 import Hilos.MovimientoEntidades;
 import Juego.Juego;
@@ -11,7 +26,10 @@ public class InterfazJuego extends JFrame {
 	private JPanelBackground mapa;
 	private Juego juego;
 	private PersonajePrincipal personaje;
-	
+	private JLabel vida;
+	private JLabel nivel;
+	private JLabel oleada;
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -19,7 +37,7 @@ public class InterfazJuego extends JFrame {
 					InterfazJuego frame = new InterfazJuego();
 					frame.setVisible(true);
 					frame.cargarEntidades();
-
+					//frame.haceteunsplash();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -28,25 +46,66 @@ public class InterfazJuego extends JFrame {
 	}
 	
 	public InterfazJuego() {
+		Font customFont = null;
+		try {
+			customFont = Font.createFont(Font.TRUETYPE_FONT, new File("src\\Fuentes\\halloweek.ttf")).deriveFont(34f);
+			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("src\\Fuentes\\halloweek.ttf")));
+		} catch (IOException e) {
+		       e.printStackTrace();
+		} catch(FontFormatException e) {
+		       e.printStackTrace();
+		}
+		
 		juego = new Juego(this);
+		
 		setResizable(false);
-		setBounds(100, 100, juego.getAncho(), juego.getAltura());
+		setBounds(100, 100, juego.getAncho(), juego.getAltura()+80);
+		
+		JPanel Ventana = new JPanel();
+		Ventana.setBounds(100, 100, juego.getAncho(), juego.getAltura()+80);
+		Ventana.setLayout(new BorderLayout());
+		
 		mapa = new JPanelBackground();
 		mapa.setLayout(null);
-		setContentPane(mapa);
+		mapa.setBounds(100, 100, juego.getAncho(), juego.getAltura());
 		
-		juego.inicializarNivel();
+		vida = new JLabel("",SwingConstants.CENTER);
+		vida.setFont(customFont);
+		vida.setForeground(Color.WHITE);
+		
+		nivel = new JLabel("",SwingConstants.CENTER);
+		nivel.setFont(customFont);
+		nivel.setForeground(Color.WHITE);
+		
+		oleada = new JLabel("",SwingConstants.CENTER);
+		oleada.setFont(customFont);
+		oleada.setForeground(Color.WHITE);
+		
+		Dimension d = new Dimension(juego.getAncho(),80);
+		JPanelBackground panelSuperior = new JPanelBackground(); 
+		panelSuperior.setLayout(new GridLayout(0,3,0,0));
+		panelSuperior.setPreferredSize(d);
+		panelSuperior.setBackground("src\\Graficas\\Mapas\\BarraSuperior.png");
+		panelSuperior.add(vida);
+		panelSuperior.add(nivel);
+		panelSuperior.add(oleada);
+		Ventana.add(panelSuperior,BorderLayout.NORTH);
+		Ventana.add(mapa,BorderLayout.CENTER);
 
+		juego.inicializarNivel();
+		
 		mapa.setBackground(juego.getNivelActual().getMapa());
 
 		
 		personaje = new PersonajePrincipal(juego);
 		juego.agregarEntidad(personaje);
 		this.addKeyListener(personaje.getInteligencia());
+		setContentPane(Ventana);
 	}
 	
 	public void cargarEntidades() {
-        MovimientoEntidades me=new MovimientoEntidades(juego,personaje);
+        MovimientoEntidades me=new MovimientoEntidades(juego,personaje,vida,nivel,oleada);
         me.start();
     }
 	
@@ -58,5 +117,14 @@ public class InterfazJuego extends JFrame {
         String ruta=juego.getNivelActual().getMapa();
         mapa.setBackground(ruta);
     }
+	
+	public JPanelBackground getMapa(){
+		return mapa;
+	}
+	
+	public void haceteunsplash(){
+		SplashScreen splash = new SplashScreen(3000);
+        splash.showSplash();
+	}
 }
 

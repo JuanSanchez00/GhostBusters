@@ -11,7 +11,7 @@ public class MejorarArma extends EfectoTemporal {
 		System.out.println("CREO MEJORAR ARMA");
 		visitor = new VisitorMejorarArma(this);
 		entidadGrafica = new EntidadGraficaMejorarArma(this, x);
-		velocidad = 100;
+		velocidad = 20;
 		tiempo = 5000;
 	}
 

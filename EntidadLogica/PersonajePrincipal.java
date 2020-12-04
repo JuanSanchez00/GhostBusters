@@ -14,8 +14,8 @@ public class PersonajePrincipal extends EntidadPersonaje{
 		visitor = new VisitorPersonajePrincipal(this);
 		entidadGrafica = new EntidadGraficaPersonajePrincipal(this);
 		proyectil = new FabricaProyectilBasico(juego);
-		velocidad = 5;
-		this.cargaViral = 0;
+		velocidad = 3;
+		cargaViral = 0;
 	}
 
 	@Override

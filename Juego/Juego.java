@@ -115,7 +115,7 @@ public class Juego {
 	
 	public void agregarEntidad(Entidad e){
 		entidadesEnEspera.add(e);
-		mapa.add(e.getEntidadGrafica().getJLabel());
+		mapa.getMapa().add(e.getEntidadGrafica().getJLabel());
 		e.getEntidadGrafica().getJLabel().setLocation(e.getEntidadGrafica().getPosicionX(),e.getEntidadGrafica().getPosicionY());
 	}
 	

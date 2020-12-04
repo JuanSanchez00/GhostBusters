@@ -14,14 +14,14 @@ public class InteligenciaEnemigos extends Inteligencia {
 		super(null);
 		this.enemigo = enemigo;
 		Random rnd = new Random();
-		delay = rnd.nextInt(10)+5;
+		delay = rnd.nextInt(40)+20;
 	}
 	
 	public void accionar(){
 		Random rnd = new Random();
 		if(delay == 0){
 			enemigo.disparar();
-			delay = rnd.nextInt(10)+5;
+			delay = rnd.nextInt(40)+20;
 		}else{
 			delay--;
 		}

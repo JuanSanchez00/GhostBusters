@@ -15,6 +15,7 @@ public class Nivel1 extends Nivel {
 		listaFabricas.add(new FabricaPortadorBeta(juego));
 		cantOleadas = 2;
 		mapa = "src\\Graficas\\Mapas\\mapa1.png";
+		numero = 1;
 	}
 	
 
