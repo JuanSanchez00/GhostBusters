@@ -34,7 +34,8 @@ public class PersonajePrincipal extends EntidadPersonaje{
 	
 	
 	public void morir(){
-		System.out.println("Ripeaste pa");
+		juego.getMapa().mostrarSplash(juego.getSplashMuerte(), 5000,juego.getMapa().getX(),juego.getMapa().getY());
+		juego.getMapa().salir();
 	}
 	
 }

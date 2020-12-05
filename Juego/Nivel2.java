@@ -9,13 +9,14 @@ public class Nivel2 extends Nivel {
 		super(juego);
 		cantidad = new int[2];
 		cantidad[0] = 20;
-		cantidad[1] = 30;
+		cantidad[1] = 20;
 		siguiente = null;
 		listaFabricas.add(new FabricaPortadorAlpha(juego));
 		listaFabricas.add(new FabricaPortadorBeta(juego));
 		cantOleadas = 2;
 		mapa = "src\\Graficas\\Mapas\\mapa2.png";
 		numero = 2;
+		Splash = "../Graficas/Splash/SplashNivel2.png";
 	}
 
 }

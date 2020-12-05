@@ -17,13 +17,12 @@ public abstract class Enemigo extends EntidadPersonaje {
 	}
 	
 	public void morir() {
+		this.juego.EliminarEntidades(this);
 		Random rnd = new Random();
 		int crearPremio = rnd.nextInt(10)+1;//entre 1 y 10
 		if (crearPremio == 1) {
 			juego.crearPremio(entidadGrafica.getPosicionX());
 		}
-		this.juego.EliminarEntidades(this);
-
 	}
 	
 	public EntidadProyectil getNuevoProyectil() {

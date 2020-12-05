@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import EntidadLogica.*;
 import Fabrica.*;
 import GUI.InterfazJuego;
+import GUI.SplashScreen;
 import Inteligencia.InteligenciaTiempoDetenido;
 
 public class Juego {
@@ -17,17 +18,17 @@ public class Juego {
  	private Nivel nivelActual;
 	private int ancho,altura;
 	private InterfazJuego mapa;
-	private int cantNiveles;
-	
+	private String[] Splash;
+			
 	public Juego(InterfazJuego mapa) {
 		nivelActual = new Nivel1(this);
 		listaEntidades = new LinkedList<Entidad>();
 		entidadesEnEspera = new LinkedList<Entidad>();
 		entidadesEliminar = new LinkedList<Entidad>();
 		ancho = 700;
-		altura =700;
+		altura = 800;
 		this.mapa = mapa;
-		this.cantNiveles = 2;
+		Splash = new String[]{"../Graficas/Splash/SplashInicio.png","../Graficas/Splash/SplashDerrota.png","../Graficas/Splash/SplashVictoria.png"};
 	}
 	
 	public void inicializarNivel() {
@@ -39,10 +40,12 @@ public class Juego {
 			if (nivelActual.getOleadaActual() == nivelActual.getCantOleadas()) {
 				if (nivelActual.getNivelSiguiente() != null) {
 					nivelActual = nivelActual.getNivelSiguiente();
+					mapa.mostrarSplash(nivelActual.getSplash(),3000,mapa.getX(),mapa.getY());
 					mapa.ponerMapa();
 				}
 				else {
-					System.out.println("gano");
+					mapa.mostrarSplash(getSplashVictoria(), 3000,mapa.getX(),mapa.getY());
+					mapa.salir();
 				}
 			}
 			else {
@@ -142,4 +145,16 @@ public class Juego {
 	public Nivel getNivelActual(){
 		return nivelActual;
 	} 
+	
+	public String getSplashInicio(){
+		return Splash[0];
+	}
+	
+	public String getSplashMuerte(){
+		return Splash[1];
+	}
+	
+	public String getSplashVictoria(){
+		return Splash[2];
+	}
 }

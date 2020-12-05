@@ -1,6 +1,7 @@
 package GUI;
 
 import java.awt.BorderLayout;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
@@ -18,7 +19,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import EntidadLogica.*;
-import Hilos.MovimientoEntidades;
+import Hilos.ControladorJuego;
 import Juego.Juego;
 
 public class InterfazJuego extends JFrame {
@@ -29,15 +30,15 @@ public class InterfazJuego extends JFrame {
 	private JLabel vida;
 	private JLabel nivel;
 	private JLabel oleada;
+	private JPanel ventana;
 
 	public static void main(String[] args) {
+		mostrarSplash("../Graficas/Splash/SplashInicio.png",3000,100,100);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					InterfazJuego frame = new InterfazJuego();
-					frame.setVisible(true);
 					frame.cargarEntidades();
-					//frame.haceteunsplash();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -58,13 +59,13 @@ public class InterfazJuego extends JFrame {
 		}
 		
 		juego = new Juego(this);
-		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
 		setBounds(100, 100, juego.getAncho(), juego.getAltura()+80);
 		
-		JPanel Ventana = new JPanel();
-		Ventana.setBounds(100, 100, juego.getAncho(), juego.getAltura()+80);
-		Ventana.setLayout(new BorderLayout());
+		ventana = new JPanel();
+		ventana.setBounds(100, 100, juego.getAncho(), juego.getAltura()+80);
+		ventana.setLayout(new BorderLayout());
 		
 		mapa = new JPanelBackground();
 		mapa.setLayout(null);
@@ -90,8 +91,8 @@ public class InterfazJuego extends JFrame {
 		panelSuperior.add(vida);
 		panelSuperior.add(nivel);
 		panelSuperior.add(oleada);
-		Ventana.add(panelSuperior,BorderLayout.NORTH);
-		Ventana.add(mapa,BorderLayout.CENTER);
+		ventana.add(panelSuperior,BorderLayout.NORTH);
+		ventana.add(mapa,BorderLayout.CENTER);
 
 		juego.inicializarNivel();
 		
@@ -101,11 +102,12 @@ public class InterfazJuego extends JFrame {
 		personaje = new PersonajePrincipal(juego);
 		juego.agregarEntidad(personaje);
 		this.addKeyListener(personaje.getInteligencia());
-		setContentPane(Ventana);
+		setContentPane(ventana);
+		setVisible(true);
 	}
 	
 	public void cargarEntidades() {
-        MovimientoEntidades me=new MovimientoEntidades(juego,personaje,vida,nivel,oleada);
+		ControladorJuego me=new ControladorJuego(juego,personaje,vida,nivel,oleada);
         me.start();
     }
 	
@@ -122,9 +124,15 @@ public class InterfazJuego extends JFrame {
 		return mapa;
 	}
 	
-	public void haceteunsplash(){
-		SplashScreen splash = new SplashScreen(3000);
+	public static void mostrarSplash(String ruta, int tiempo,int x, int y){
+		SplashScreen splash = new SplashScreen(tiempo, ruta,x,y);
         splash.showSplash();
 	}
+	
+	public void salir(){
+		System.exit(0);
+	}
+	
+	
 }
 

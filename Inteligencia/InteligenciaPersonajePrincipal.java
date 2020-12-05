@@ -1,7 +1,11 @@
 package Inteligencia;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+
+import javax.swing.Timer;
 
 import EntidadGrafica.EntidadGraficaPersonajePrincipal;
 import EntidadLogica.Entidad;
@@ -9,7 +13,8 @@ import EntidadLogica.PersonajePrincipal;
 
 public class InteligenciaPersonajePrincipal extends Inteligencia{
 	private PersonajePrincipal personajePrincipal;
-	
+	private Timer timer;
+
     public InteligenciaPersonajePrincipal(PersonajePrincipal personajePrincipal) {
         super(null);
         this.personajePrincipal = personajePrincipal;

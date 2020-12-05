@@ -1,4 +1,6 @@
 package GUI;
+
+
 //SplashScreen.java
 //A simple application to show a title screen in the center of the screen
 //for the amount of time given in the constructor.  This class includes
@@ -7,7 +9,9 @@ package GUI;
 //
 
 import java.awt.*;
+
 import javax.swing.*;
+
 
 /**
 * This code was edited or generated using CloudGarden's Jigloo
@@ -23,49 +27,34 @@ import javax.swing.*;
 */
 public class SplashScreen extends JWindow {
 	private int duration;
-	private JLabel jLabelTitle;
-
-	public SplashScreen(int d) {
+	private String ruta;
+	private int x;
+	private int y;
+	public SplashScreen(int d, String r, int x, int y) {
 		duration = d;
+		ruta = r;
+		this.x = x;
+		this.y = y;
 	}
 
 	// A simple little method to show a title screen in the center
 	// of the screen for the amount of time given in the constructor
 	public void showSplash() {
-		 this.setLocationByPlatform(true);
+		this.setLocationByPlatform(true);
 		 JPanel content = (JPanel)getContentPane();
 		 content.setBackground(new java.awt.Color(191,191,191));
 		 content.setLayout(null);
-		 JLabel label = new JLabel(new ImageIcon("oreilly.gif"));
-		 JLabel copyrt = new JLabel("Rock.AR v2.0 - Created by Martín L. Larrea", JLabel.CENTER);
-		 copyrt.setFont(new Font("Sans-Serif", Font.BOLD, 12));
-		 copyrt.setForeground(new java.awt.Color(165,42,42));
-		 copyrt.setText("Plane WAR - TdP 2014");
-		 content.add(copyrt, "South");
-		 
+		 JLabel label = new JLabel();
 		 // Set the window's bounds, centering the window
-		 int width = 450;
-		 int height =115;
 		 Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-		 int x = (screen.width-width)/2;
-		 int y = (screen.height-height)/2;
-		 this.setBounds(0, 0, 915, 460);
+		 this.setBounds(x, y, 700, 880);
 		
 		 // Build the splash screen
 
 		 
-			 jLabelTitle = new JLabel();
-			 content.add(jLabelTitle, "Center");
-			 jLabelTitle.setText("Plane WAR");
-			 jLabelTitle.setFont(new java.awt.Font("Ubuntu",0,72));
-			 jLabelTitle.setHorizontalAlignment(SwingConstants.CENTER);
-			 jLabelTitle.setForeground(new java.awt.Color(255,165,0));
-			 jLabelTitle.setBounds(0, 298, 437, 157);
-		 
-		 content.add(label, BorderLayout.WEST);
-		 label.setIcon(new ImageIcon(getClass().getClassLoader().getResource("C:\\Users\\Genaro\\Desktop\\mequieromorir\\1.png")));
-		 label.setBounds(0, 1, 915, 458);
-		 copyrt.setBounds(18, 405, 464, 43);
+		 content.add(label);
+		 label.setIcon(new ImageIcon(getClass().getResource(ruta)));
+		 label.setBounds(0, 0, 700, 880);
 
 		 // Display it
 		 setVisible(true);
@@ -76,7 +65,6 @@ public class SplashScreen extends JWindow {
 		 setVisible(false);
 		 getContentPane().setBackground(new java.awt.Color(0,0,0));
 		 this.setOpacity(0.0f);
-		 content.add(copyrt, "South");
 		 content.add(label, "West");
 	}
 
@@ -84,4 +72,5 @@ public class SplashScreen extends JWindow {
 		showSplash();
 		
 	}
+
 }
