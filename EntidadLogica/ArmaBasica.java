@@ -13,7 +13,7 @@ public class ArmaBasica extends ProyectilSanitario {
         visitor = new VisitorArmaBasica(this);
         entidadGrafica = new EntidadGraficaArmaBasica(this,x,y);
         velocidad = 15;
-        danio = 25;
+        danio = 18;
     }
 
     @Override

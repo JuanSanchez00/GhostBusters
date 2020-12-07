@@ -1,6 +1,8 @@
 package GUI;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.io.File;
+
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -30,7 +32,7 @@ public class JPanelBackground extends JPanel {
 		
 		// Construimos la imagen y se la asignamos al atributo background.
 		this.setOpaque(false);
-		this.background = new ImageIcon(imagePath).getImage();
+		this.background =  new ImageIcon(this.getClass().getResource(imagePath)).getImage();
 		repaint();
 	}
  

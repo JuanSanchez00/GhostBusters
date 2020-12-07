@@ -47,14 +47,14 @@ public class SplashScreen extends JWindow {
 		 JLabel label = new JLabel();
 		 // Set the window's bounds, centering the window
 		 Dimension screen = Toolkit.getDefaultToolkit().getScreenSize();
-		 this.setBounds(x, y, 700, 880);
+		 this.setBounds(x, y, 600, 780);
 		
 		 // Build the splash screen
 
 		 
 		 content.add(label);
 		 label.setIcon(new ImageIcon(getClass().getResource(ruta)));
-		 label.setBounds(0, 0, 700, 880);
+		 label.setBounds(0, 0, 600, 780);
 
 		 // Display it
 		 setVisible(true);

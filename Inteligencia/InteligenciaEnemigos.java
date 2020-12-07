@@ -25,6 +25,7 @@ public class InteligenciaEnemigos extends Inteligencia {
 		}else{
 			delay--;
 		}
+		enemigo.controlarCargaViral();
         int y = enemigo.getEntidadGrafica().getPosicionY();
         int alturaEntidad = enemigo.getEntidadGrafica().getAltura();
         int alturaJuego = enemigo.getJuego().getAltura();

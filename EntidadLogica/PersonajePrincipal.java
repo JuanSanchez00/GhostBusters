@@ -38,4 +38,11 @@ public class PersonajePrincipal extends EntidadPersonaje{
 		juego.getMapa().salir();
 	}
 	
+	public void disparar(){
+		EntidadProyectil p = this.getNuevoProyectil();
+		if(p != null){
+			this.getJuego().agregarEntidad(p);
+		}
+	}
+	
 }

@@ -48,7 +48,7 @@ public abstract class EntidadGrafica {
 	}
 	
 	public ImageIcon getImagenDefault() {
-		return new ImageIcon(this.imagenes[0]);
+		return new ImageIcon(getClass().getResource(this.imagenes[0]));
 	}
 
 	public void setPosicionX(int x) {

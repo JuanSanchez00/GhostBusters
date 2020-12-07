@@ -12,7 +12,7 @@ public class EntidadGraficaPortadorBeta extends EntidadGrafica{
 
 	public EntidadGraficaPortadorBeta(Entidad entidad){
 		super(entidad);
-		this.imagenes = new String[]{"src\\Graficas\\Enemigos\\EnemigoBetaDefault.gif","/Grafica/Enemigo/EnemigoBetaMuerte.gif"};
+		this.imagenes = new String[]{"/Graficas/Enemigos/EnemigoBetaDefault.gif","/Grafica/Enemigo/EnemigoBetaMuerte.gif"};
 		Random rnd = new Random();
 	    this.altura = 75;
 	    this.ancho = 75;

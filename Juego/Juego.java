@@ -25,10 +25,10 @@ public class Juego {
 		listaEntidades = new LinkedList<Entidad>();
 		entidadesEnEspera = new LinkedList<Entidad>();
 		entidadesEliminar = new LinkedList<Entidad>();
-		ancho = 700;
-		altura = 800;
+		ancho = 600;
+		altura = 700;
 		this.mapa = mapa;
-		Splash = new String[]{"../Graficas/Splash/SplashInicio.png","../Graficas/Splash/SplashDerrota.png","../Graficas/Splash/SplashVictoria.png"};
+		Splash = new String[]{"/Graficas/Splash/SplashInicio.png","/Graficas/Splash/SplashDerrota.png","/Graficas/Splash/SplashVictoria.png"};
 	}
 	
 	public void inicializarNivel() {

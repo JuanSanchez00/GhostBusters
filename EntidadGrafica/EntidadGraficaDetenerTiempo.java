@@ -9,7 +9,7 @@ public class EntidadGraficaDetenerTiempo extends EntidadGrafica {
 
 	public EntidadGraficaDetenerTiempo(Entidad entidad, int x){
 		super(entidad);
-		this.imagenes = new String[]{"src\\Graficas\\Premios\\Efecto Temporal\\PararTiempo.gif"};
+		this.imagenes = new String[]{"/Graficas/Premios/Efecto Temporal/PararTiempo.gif"};
 		this.altura = 50;
 		this.ancho = 50;
 		this.label.setSize(ancho,altura);

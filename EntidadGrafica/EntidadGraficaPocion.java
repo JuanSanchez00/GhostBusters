@@ -9,7 +9,7 @@ public class EntidadGraficaPocion extends EntidadGrafica {
 	
 	public EntidadGraficaPocion(Entidad entidad, int x) {
 		super(entidad);
-		this.imagenes = new String[]{"src\\Graficas\\Premios\\Objeto Precioso\\Curacion.gif"};
+		this.imagenes = new String[]{"/Graficas/Premios/Objeto Precioso/Curacion.gif"};
 		this.altura = 50;
 		this.ancho = 50;
 		this.label.setSize(ancho,altura);

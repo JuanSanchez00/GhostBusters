@@ -9,7 +9,7 @@ public class EntidadGraficaProyectilAlpha extends EntidadGrafica{
 	
 	public EntidadGraficaProyectilAlpha(Entidad entidad, int x , int y){
 		super(entidad);
-		this.imagenes = new String[]{"src\\Graficas\\Proyectiles\\ProyectilAlpha.gif"};
+		this.imagenes = new String[]{"/Graficas/Proyectiles/ProyectilAlpha.gif"};
 		this.altura = 40;
 		this.ancho = 40;
 		this.label.setSize(ancho,altura);

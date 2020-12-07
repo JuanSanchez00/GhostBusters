@@ -13,7 +13,7 @@ public class SuperArma extends ProyectilSanitario {
         visitor = new VisitorSuperArma(this);
         entidadGrafica = new EntidadGraficaSuperArma(this,x,y);
         velocidad = 15;
-        danio = 50;
+        danio = 40;
     }
 
     @Override

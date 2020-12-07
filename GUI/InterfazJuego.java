@@ -33,7 +33,7 @@ public class InterfazJuego extends JFrame {
 	private JPanel ventana;
 
 	public static void main(String[] args) {
-		mostrarSplash("../Graficas/Splash/SplashInicio.png",3000,100,100);
+		mostrarSplash("/Graficas/Splash/SplashInicio.png",3000,10,10);
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -49,9 +49,9 @@ public class InterfazJuego extends JFrame {
 	public InterfazJuego() {
 		Font customFont = null;
 		try {
-			customFont = Font.createFont(Font.TRUETYPE_FONT, new File("src\\Fuentes\\halloweek.ttf")).deriveFont(34f);
+			customFont = Font.createFont(Font.TRUETYPE_FONT, new File("src/Fuentes/halloweek.ttf")).deriveFont(25f);
 			GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("src\\Fuentes\\halloweek.ttf")));
+			ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("src/Fuentes/halloweek.ttf")));
 		} catch (IOException e) {
 		       e.printStackTrace();
 		} catch(FontFormatException e) {
@@ -61,7 +61,7 @@ public class InterfazJuego extends JFrame {
 		juego = new Juego(this);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
-		setBounds(100, 100, juego.getAncho(), juego.getAltura()+80);
+		setBounds(10, 10, juego.getAncho(), juego.getAltura()+80);
 		
 		ventana = new JPanel();
 		ventana.setBounds(100, 100, juego.getAncho(), juego.getAltura()+80);
@@ -87,7 +87,7 @@ public class InterfazJuego extends JFrame {
 		JPanelBackground panelSuperior = new JPanelBackground(); 
 		panelSuperior.setLayout(new GridLayout(0,3,0,0));
 		panelSuperior.setPreferredSize(d);
-		panelSuperior.setBackground("src\\Graficas\\Mapas\\BarraSuperior.png");
+		panelSuperior.setBackground("/Graficas/Mapas/BarraSuperior.png");
 		panelSuperior.add(vida);
 		panelSuperior.add(nivel);
 		panelSuperior.add(oleada);

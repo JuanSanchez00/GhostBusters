@@ -28,4 +28,8 @@ public abstract class Enemigo extends EntidadPersonaje {
 	public EntidadProyectil getNuevoProyectil() {
 		return proyectil.devolverProyectil(entidadGrafica.getPosicionX()+(entidadGrafica.getAncho()/2),entidadGrafica.getPosicionY()+entidadGrafica.getAltura());
 	}	
+	
+	public void controlarCargaViral(){
+		
+	}
 }

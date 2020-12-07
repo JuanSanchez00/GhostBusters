@@ -1,5 +1,10 @@
 package Fabrica;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.Timer;
+
 import EntidadLogica.EntidadProyectil;
 import Juego.Juego;
 
