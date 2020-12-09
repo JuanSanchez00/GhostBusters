@@ -11,7 +11,7 @@ public class DetenerTiempo extends EfectoTemporal {
 		visitor = new VisitorDetenerTiempo(this);
 		entidadGrafica = new EntidadGraficaDetenerTiempo(this, x);
 		velocidad = 20;
-		tiempo = 3000;
+		tiempo = 5000;
 	}
 	
 	@Override

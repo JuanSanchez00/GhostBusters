@@ -13,6 +13,12 @@ import java.awt.GridLayout;
 import java.io.File;
 import java.io.IOException;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.FloatControl;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -31,6 +37,7 @@ public class InterfazJuego extends JFrame {
 	private JLabel nivel;
 	private JLabel oleada;
 	private JPanel ventana;
+	private Clip sonido;
 
 	public static void main(String[] args) {
 		mostrarSplash("/Graficas/Splash/SplashInicio.png",3000,10,10);
@@ -38,6 +45,7 @@ public class InterfazJuego extends JFrame {
 			public void run() {
 				try {
 					InterfazJuego frame = new InterfazJuego();
+					frame.iniciarSonido();
 					frame.cargarEntidades();
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -106,6 +114,21 @@ public class InterfazJuego extends JFrame {
 		setVisible(true);
 	}
 	
+	private void iniciarSonido(){
+		try {
+			sonido = AudioSystem.getClip();
+			AudioInputStream inputStream = AudioSystem.getAudioInputStream(getClass().getResource("/Audio/Fondo.wav"));
+		    sonido.open(inputStream);
+		    FloatControl gainControl = (FloatControl) sonido.getControl(FloatControl.Type.MASTER_GAIN);        
+		    gainControl.setValue(20f * (float) Math.log10(0.01f));
+		    sonido.loop(sonido.LOOP_CONTINUOUSLY);
+		    sonido.start();
+		} catch (LineUnavailableException e) {
+		} catch (UnsupportedAudioFileException e) {
+		} catch (IOException e) {
+		}	
+	}
+	
 	public void cargarEntidades() {
 		ControladorJuego me=new ControladorJuego(juego,personaje,vida,nivel,oleada);
         me.start();
@@ -135,4 +158,6 @@ public class InterfazJuego extends JFrame {
 	
 	
 }
+
+
 

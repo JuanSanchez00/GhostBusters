@@ -12,7 +12,7 @@ public class MejorarArma extends EfectoTemporal {
 		visitor = new VisitorMejorarArma(this);
 		entidadGrafica = new EntidadGraficaMejorarArma(this, x);
 		velocidad = 20;
-		tiempo = 5000;
+		tiempo = 10000;
 	}
 
 	@Override
