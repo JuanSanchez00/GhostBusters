@@ -19,6 +19,7 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -67,9 +68,12 @@ public class InterfazJuego extends JFrame {
 		}
 		
 		juego = new Juego(this);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable(false);
 		setBounds(10, 10, juego.getAncho(), juego.getAltura()+80);
+		setTitle("Ghostbusters");
+		setIconImage(new ImageIcon(getClass().getResource("/Graficas/Mapas/Icono.png")).getImage());
 		
 		ventana = new JPanel();
 		ventana.setBounds(100, 100, juego.getAncho(), juego.getAltura()+80);
