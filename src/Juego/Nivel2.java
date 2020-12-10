@@ -8,8 +8,8 @@ public class Nivel2 extends Nivel {
 	public Nivel2(Juego juego) {
 		super(juego);
 		cantidad = new int[2];
-		cantidad[0] = 15;
-		cantidad[1] = 15;
+		cantidad[0] = 10;
+		cantidad[1] = 10;
 		siguiente = null;
 		listaFabricas.add(new FabricaPortadorAlpha(juego));
 		listaFabricas.add(new FabricaPortadorBeta(juego));

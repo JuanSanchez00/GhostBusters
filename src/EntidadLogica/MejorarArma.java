@@ -8,7 +8,6 @@ public class MejorarArma extends EfectoTemporal {
 
 	public MejorarArma(Juego juego, int x) {
 		super(juego);
-		System.out.println("CREO MEJORAR ARMA");
 		visitor = new VisitorMejorarArma(this);
 		entidadGrafica = new EntidadGraficaMejorarArma(this, x);
 		velocidad = 20;
